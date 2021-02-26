@@ -1,110 +1,161 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhss.eshop.auth.mapper.AuthPriorityMapper">
-  <resultMap id="BaseResultMap" type="com.zhss.eshop.auth.domain.model.AuthPriority">
-    <!--@mbg.generated-->
-    <!--@Table auth_priority-->
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="code" jdbcType="VARCHAR" property="code" />
-    <result column="url" jdbcType="VARCHAR" property="url" />
-    <result column="priority_comment" jdbcType="VARCHAR" property="priorityComment" />
-    <result column="priority_type" jdbcType="TINYINT" property="priorityType" />
-    <result column="parent_id" jdbcType="BIGINT" property="parentId" />
-    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
-    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    <!--@mbg.generated-->
-    id, code, url, priority_comment, priority_type, parent_id, gmt_create, gmt_modified
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    <!--@mbg.generated-->
+    <resultMap id="BaseResultMap" type="com.zhss.eshop.auth.domain.model.AuthPriority">
+        <!--@mbg.generated-->
+        <!--@Table auth_priority-->
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="code" jdbcType="VARCHAR" property="code"/>
+        <result column="url" jdbcType="VARCHAR" property="url"/>
+        <result column="priority_comment" jdbcType="VARCHAR" property="priorityComment"/>
+        <result column="priority_type" jdbcType="TINYINT" property="priorityType"/>
+        <result column="parent_id" jdbcType="BIGINT" property="parentId"/>
+        <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate"/>
+        <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id, code, url, priority_comment, priority_type, parent_id, gmt_create, gmt_modified
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
     select
-    <include refid="Base_Column_List" />
+
+        <include refid="Base_Column_List"/>
+
     from auth_priority
     where id = #{id,jdbcType=BIGINT}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    <!--@mbg.generated-->
+
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        <!--@mbg.generated-->
     delete from auth_priority
     where id = #{id,jdbcType=BIGINT}
-  </delete>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.auth.domain.model.AuthPriority" useGeneratedKeys="true">
-    <!--@mbg.generated-->
+
+    </delete>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id"
+            parameterType="com.zhss.eshop.auth.domain.model.AuthPriority" useGeneratedKeys="true">
+        <!--@mbg.generated-->
     insert into auth_priority
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="code != null">
-        code,
-      </if>
-      <if test="url != null">
+
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="code != null">
+                code,
+
+            </if>
+            <if test="url != null">
+
         url,
-      </if>
-      <if test="priorityComment != null">
+
+            </if>
+            <if test="priorityComment != null">
+
         priority_comment,
-      </if>
-      <if test="priorityType != null">
+
+            </if>
+            <if test="priorityType != null">
+
         priority_type,
-      </if>
-      <if test="parentId != null">
+
+            </if>
+            <if test="parentId != null">
+
         parent_id,
-      </if>
-      <if test="gmtCreate != null">
+
+            </if>
+            <if test="gmtCreate != null">
+
         gmt_create,
-      </if>
-      <if test="gmtModified != null">
+
+            </if>
+            <if test="gmtModified != null">
+
         gmt_modified,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="code != null">
-        #{code,jdbcType=VARCHAR},
-      </if>
-      <if test="url != null">
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="code != null">
+                #{code,jdbcType=VARCHAR},
+
+            </if>
+            <if test="url != null">
+
         #{url,jdbcType=VARCHAR},
-      </if>
-      <if test="priorityComment != null">
+
+            </if>
+            <if test="priorityComment != null">
+
         #{priorityComment,jdbcType=VARCHAR},
-      </if>
-      <if test="priorityType != null">
+
+            </if>
+            <if test="priorityType != null">
+
         #{priorityType,jdbcType=TINYINT},
-      </if>
-      <if test="parentId != null">
+
+            </if>
+            <if test="parentId != null">
+
         #{parentId,jdbcType=BIGINT},
-      </if>
-      <if test="gmtCreate != null">
+
+            </if>
+            <if test="gmtCreate != null">
+
         #{gmtCreate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="gmtModified != null">
+
+            </if>
+            <if test="gmtModified != null">
+
         #{gmtModified,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.auth.domain.model.AuthPriority">
-    <!--@mbg.generated-->
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.auth.domain.model.AuthPriority">
+        <!--@mbg.generated-->
     update auth_priority
-    <set>
-      <if test="code != null">
-        code = #{code,jdbcType=VARCHAR},
-      </if>
-      <if test="url != null">
+
+        <set>
+            <if test="code != null">
+                code = #{code,jdbcType=VARCHAR},
+
+            </if>
+            <if test="url != null">
+
         url = #{url,jdbcType=VARCHAR},
-      </if>
-      <if test="priorityComment != null">
+
+            </if>
+            <if test="priorityComment != null">
+
         priority_comment = #{priorityComment,jdbcType=VARCHAR},
-      </if>
-      <if test="priorityType != null">
+
+            </if>
+            <if test="priorityType != null">
+
         priority_type = #{priorityType,jdbcType=TINYINT},
-      </if>
-      <if test="parentId != null">
+
+            </if>
+            <if test="parentId != null">
+
         parent_id = #{parentId,jdbcType=BIGINT},
-      </if>
-      <if test="gmtCreate != null">
+
+            </if>
+            <if test="gmtCreate != null">
+
         gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="gmtModified != null">
+
+            </if>
+            <if test="gmtModified != null">
+
         gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
-      </if>
-    </set>
+            </if>
+        </set>
+
     where id = #{id,jdbcType=BIGINT}
-  </update>
+
+    </update>
+    <select id="listRootPriorities" resultMap="BaseResultMap">
+    select
+      <include refid="Base_Column_List"/>
+    from auth_priority
+    where parent_id IS NULL
+    </select>
 </mapper>

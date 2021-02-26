@@ -1,21 +1,14 @@
-package com.zhss.eshop.auth.domain.model;
+package com.zhss.eshop.auth.domain.vo;
+
+import lombok.Data;
 
 import java.util.Date;
-
-import com.zhss.eshop.common.util.BeanCopierUtils;
-import lombok.Data;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
     * 权限表，每个权限代表了系统中的一个菜单、按钮、URL请求
     */
 @Data
-public class AuthPriority {
-
-    private static final Logger logger = LoggerFactory.getLogger(
-            AuthPriority.class);
-
+public class PriorityVO {
     /**
     * 主键，自增长
     */
@@ -55,17 +48,4 @@ public class AuthPriority {
     * 权限的修改时间
     */
     private Date gmtModified;
-
-    //克隆
-    public <T> T clone(Class<T> clazz) throws Exception {
-        T target=null;
-        try {
-            target=clazz.newInstance();
-        }catch (Exception exception){
-            logger.error("克隆对象出错");
-        }
-        BeanCopierUtils.copyProperties(this, target);
-        return target;
-
-    }
 }

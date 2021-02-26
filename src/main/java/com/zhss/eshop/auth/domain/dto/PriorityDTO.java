@@ -1,21 +1,20 @@
-package com.zhss.eshop.auth.domain.model;
+package com.zhss.eshop.auth.domain.dto;
 
-import java.util.Date;
 
 import com.zhss.eshop.common.util.BeanCopierUtils;
 import lombok.Data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Date;
+
 /**
     * 权限表，每个权限代表了系统中的一个菜单、按钮、URL请求
     */
 @Data
-public class AuthPriority {
+public class PriorityDTO {
 
-    private static final Logger logger = LoggerFactory.getLogger(
-            AuthPriority.class);
-
+    private static final Logger logger = LoggerFactory.getLogger(PriorityDTO.class);
     /**
     * 主键，自增长
     */
