@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhss.eshop.pay.mapper.PayTransactionMapper">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.pay.domain.dao.PayTransaction">
+    <!--@mbg.generated-->
+    <!--@Table pay_transaction-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="order_info_id" jdbcType="BIGINT" property="orderInfoId" />
+    <result column="order_no" jdbcType="VARCHAR" property="orderNo" />
+    <result column="payable_amount" jdbcType="DECIMAL" property="payableAmount" />
+    <result column="user_account_id" jdbcType="BIGINT" property="userAccountId" />
+    <result column="user_pay_account" jdbcType="VARCHAR" property="userPayAccount" />
+    <result column="transaction_channel" jdbcType="TINYINT" property="transactionChannel" />
+    <result column="transaction_number" jdbcType="VARCHAR" property="transactionNumber" />
+    <result column="finish_pay_time" jdbcType="TIMESTAMP" property="finishPayTime" />
+    <result column="response_code" jdbcType="VARCHAR" property="responseCode" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, order_info_id, order_no, payable_amount, user_account_id, user_pay_account, transaction_channel, 
+    transaction_number, finish_pay_time, response_code, `status`, gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from pay_transaction
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from pay_transaction
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.pay.domain.dao.PayTransaction" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into pay_transaction
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="orderInfoId != null">
+        order_info_id,
+      </if>
+      <if test="orderNo != null">
+        order_no,
+      </if>
+      <if test="payableAmount != null">
+        payable_amount,
+      </if>
+      <if test="userAccountId != null">
+        user_account_id,
+      </if>
+      <if test="userPayAccount != null">
+        user_pay_account,
+      </if>
+      <if test="transactionChannel != null">
+        transaction_channel,
+      </if>
+      <if test="transactionNumber != null">
+        transaction_number,
+      </if>
+      <if test="finishPayTime != null">
+        finish_pay_time,
+      </if>
+      <if test="responseCode != null">
+        response_code,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="orderInfoId != null">
+        #{orderInfoId,jdbcType=BIGINT},
+      </if>
+      <if test="orderNo != null">
+        #{orderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="payableAmount != null">
+        #{payableAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="userAccountId != null">
+        #{userAccountId,jdbcType=BIGINT},
+      </if>
+      <if test="userPayAccount != null">
+        #{userPayAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="transactionChannel != null">
+        #{transactionChannel,jdbcType=TINYINT},
+      </if>
+      <if test="transactionNumber != null">
+        #{transactionNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="finishPayTime != null">
+        #{finishPayTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="responseCode != null">
+        #{responseCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.pay.domain.dao.PayTransaction">
+    <!--@mbg.generated-->
+    update pay_transaction
+    <set>
+      <if test="orderInfoId != null">
+        order_info_id = #{orderInfoId,jdbcType=BIGINT},
+      </if>
+      <if test="orderNo != null">
+        order_no = #{orderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="payableAmount != null">
+        payable_amount = #{payableAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="userAccountId != null">
+        user_account_id = #{userAccountId,jdbcType=BIGINT},
+      </if>
+      <if test="userPayAccount != null">
+        user_pay_account = #{userPayAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="transactionChannel != null">
+        transaction_channel = #{transactionChannel,jdbcType=TINYINT},
+      </if>
+      <if test="transactionNumber != null">
+        transaction_number = #{transactionNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="finishPayTime != null">
+        finish_pay_time = #{finishPayTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="responseCode != null">
+        response_code = #{responseCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        `status` = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

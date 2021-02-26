@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhss.eshop.wms.mapper.WmsSaleDeliveryOrderSendOutDetailMapper">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.wms.domain.dao.WmsSaleDeliveryOrderSendOutDetail">
+    <!--@mbg.generated-->
+    <!--@Table wms_sale_delivery_order_send_out_detail-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="sale_delivery_order_item_id" jdbcType="BIGINT" property="saleDeliveryOrderItemId" />
+    <result column="goods_allocation_stock_detail_id" jdbcType="BIGINT" property="goodsAllocationStockDetailId" />
+    <result column="send_out_count" jdbcType="BIGINT" property="sendOutCount" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, sale_delivery_order_item_id, goods_allocation_stock_detail_id, send_out_count, 
+    gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from wms_sale_delivery_order_send_out_detail
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from wms_sale_delivery_order_send_out_detail
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.wms.domain.dao.WmsSaleDeliveryOrderSendOutDetail" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into wms_sale_delivery_order_send_out_detail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="saleDeliveryOrderItemId != null">
+        sale_delivery_order_item_id,
+      </if>
+      <if test="goodsAllocationStockDetailId != null">
+        goods_allocation_stock_detail_id,
+      </if>
+      <if test="sendOutCount != null">
+        send_out_count,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="saleDeliveryOrderItemId != null">
+        #{saleDeliveryOrderItemId,jdbcType=BIGINT},
+      </if>
+      <if test="goodsAllocationStockDetailId != null">
+        #{goodsAllocationStockDetailId,jdbcType=BIGINT},
+      </if>
+      <if test="sendOutCount != null">
+        #{sendOutCount,jdbcType=BIGINT},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.wms.domain.dao.WmsSaleDeliveryOrderSendOutDetail">
+    <!--@mbg.generated-->
+    update wms_sale_delivery_order_send_out_detail
+    <set>
+      <if test="saleDeliveryOrderItemId != null">
+        sale_delivery_order_item_id = #{saleDeliveryOrderItemId,jdbcType=BIGINT},
+      </if>
+      <if test="goodsAllocationStockDetailId != null">
+        goods_allocation_stock_detail_id = #{goodsAllocationStockDetailId,jdbcType=BIGINT},
+      </if>
+      <if test="sendOutCount != null">
+        send_out_count = #{sendOutCount,jdbcType=BIGINT},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

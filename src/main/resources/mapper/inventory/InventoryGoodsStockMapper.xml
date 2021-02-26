@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhss.eshop.inventory.mapper.InventoryGoodsStockMapper">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.inventory.domain.dao.InventoryGoodsStock">
+    <!--@mbg.generated-->
+    <!--@Table inventory_goods_stock-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="goods_sku_id" jdbcType="BIGINT" property="goodsSkuId" />
+    <result column="sale_stock_quantity" jdbcType="BIGINT" property="saleStockQuantity" />
+    <result column="locked_stock_quantity" jdbcType="BIGINT" property="lockedStockQuantity" />
+    <result column="saled_stock_quantity" jdbcType="BIGINT" property="saledStockQuantity" />
+    <result column="stock_status" jdbcType="TINYINT" property="stockStatus" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, goods_sku_id, sale_stock_quantity, locked_stock_quantity, saled_stock_quantity, 
+    stock_status, gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from inventory_goods_stock
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from inventory_goods_stock
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.inventory.domain.dao.InventoryGoodsStock" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into inventory_goods_stock
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="goodsSkuId != null">
+        goods_sku_id,
+      </if>
+      <if test="saleStockQuantity != null">
+        sale_stock_quantity,
+      </if>
+      <if test="lockedStockQuantity != null">
+        locked_stock_quantity,
+      </if>
+      <if test="saledStockQuantity != null">
+        saled_stock_quantity,
+      </if>
+      <if test="stockStatus != null">
+        stock_status,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="goodsSkuId != null">
+        #{goodsSkuId,jdbcType=BIGINT},
+      </if>
+      <if test="saleStockQuantity != null">
+        #{saleStockQuantity,jdbcType=BIGINT},
+      </if>
+      <if test="lockedStockQuantity != null">
+        #{lockedStockQuantity,jdbcType=BIGINT},
+      </if>
+      <if test="saledStockQuantity != null">
+        #{saledStockQuantity,jdbcType=BIGINT},
+      </if>
+      <if test="stockStatus != null">
+        #{stockStatus,jdbcType=TINYINT},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.inventory.domain.dao.InventoryGoodsStock">
+    <!--@mbg.generated-->
+    update inventory_goods_stock
+    <set>
+      <if test="goodsSkuId != null">
+        goods_sku_id = #{goodsSkuId,jdbcType=BIGINT},
+      </if>
+      <if test="saleStockQuantity != null">
+        sale_stock_quantity = #{saleStockQuantity,jdbcType=BIGINT},
+      </if>
+      <if test="lockedStockQuantity != null">
+        locked_stock_quantity = #{lockedStockQuantity,jdbcType=BIGINT},
+      </if>
+      <if test="saledStockQuantity != null">
+        saled_stock_quantity = #{saledStockQuantity,jdbcType=BIGINT},
+      </if>
+      <if test="stockStatus != null">
+        stock_status = #{stockStatus,jdbcType=TINYINT},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

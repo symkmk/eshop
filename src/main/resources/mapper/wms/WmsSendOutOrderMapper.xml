@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhss.eshop.wms.mapper.WmsSendOutOrderMapper">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.wms.domain.dao.WmsSendOutOrder">
+    <!--@mbg.generated-->
+    <!--@Table wms_send_out_order-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="sale_delivery_order_id" jdbcType="BIGINT" property="saleDeliveryOrderId" />
+    <result column="user_account_id" jdbcType="BIGINT" property="userAccountId" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="order_id" jdbcType="BIGINT" property="orderId" />
+    <result column="order_no" jdbcType="VARCHAR" property="orderNo" />
+    <result column="consignee" jdbcType="VARCHAR" property="consignee" />
+    <result column="delivery_address" jdbcType="VARCHAR" property="deliveryAddress" />
+    <result column="consignee_cell_phone_number" jdbcType="VARCHAR" property="consigneeCellPhoneNumber" />
+    <result column="freight" jdbcType="DECIMAL" property="freight" />
+    <result column="pay_type" jdbcType="TINYINT" property="payType" />
+    <result column="total_amount" jdbcType="DECIMAL" property="totalAmount" />
+    <result column="discount_amount" jdbcType="DECIMAL" property="discountAmount" />
+    <result column="coupon_amount" jdbcType="DECIMAL" property="couponAmount" />
+    <result column="payable_amount" jdbcType="DECIMAL" property="payableAmount" />
+    <result column="invoice_title" jdbcType="VARCHAR" property="invoiceTitle" />
+    <result column="taxpayer_id" jdbcType="VARCHAR" property="taxpayerId" />
+    <result column="order_comment" jdbcType="VARCHAR" property="orderComment" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, sale_delivery_order_id, user_account_id, username, order_id, order_no, consignee, 
+    delivery_address, consignee_cell_phone_number, freight, pay_type, total_amount, discount_amount, 
+    coupon_amount, payable_amount, invoice_title, taxpayer_id, order_comment, gmt_create, 
+    gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from wms_send_out_order
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from wms_send_out_order
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.wms.domain.dao.WmsSendOutOrder" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into wms_send_out_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="saleDeliveryOrderId != null">
+        sale_delivery_order_id,
+      </if>
+      <if test="userAccountId != null">
+        user_account_id,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="orderNo != null">
+        order_no,
+      </if>
+      <if test="consignee != null">
+        consignee,
+      </if>
+      <if test="deliveryAddress != null">
+        delivery_address,
+      </if>
+      <if test="consigneeCellPhoneNumber != null">
+        consignee_cell_phone_number,
+      </if>
+      <if test="freight != null">
+        freight,
+      </if>
+      <if test="payType != null">
+        pay_type,
+      </if>
+      <if test="totalAmount != null">
+        total_amount,
+      </if>
+      <if test="discountAmount != null">
+        discount_amount,
+      </if>
+      <if test="couponAmount != null">
+        coupon_amount,
+      </if>
+      <if test="payableAmount != null">
+        payable_amount,
+      </if>
+      <if test="invoiceTitle != null">
+        invoice_title,
+      </if>
+      <if test="taxpayerId != null">
+        taxpayer_id,
+      </if>
+      <if test="orderComment != null">
+        order_comment,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="saleDeliveryOrderId != null">
+        #{saleDeliveryOrderId,jdbcType=BIGINT},
+      </if>
+      <if test="userAccountId != null">
+        #{userAccountId,jdbcType=BIGINT},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=BIGINT},
+      </if>
+      <if test="orderNo != null">
+        #{orderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="consignee != null">
+        #{consignee,jdbcType=VARCHAR},
+      </if>
+      <if test="deliveryAddress != null">
+        #{deliveryAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="consigneeCellPhoneNumber != null">
+        #{consigneeCellPhoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="freight != null">
+        #{freight,jdbcType=DECIMAL},
+      </if>
+      <if test="payType != null">
+        #{payType,jdbcType=TINYINT},
+      </if>
+      <if test="totalAmount != null">
+        #{totalAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="discountAmount != null">
+        #{discountAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="couponAmount != null">
+        #{couponAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="payableAmount != null">
+        #{payableAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="invoiceTitle != null">
+        #{invoiceTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="taxpayerId != null">
+        #{taxpayerId,jdbcType=VARCHAR},
+      </if>
+      <if test="orderComment != null">
+        #{orderComment,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.wms.domain.dao.WmsSendOutOrder">
+    <!--@mbg.generated-->
+    update wms_send_out_order
+    <set>
+      <if test="saleDeliveryOrderId != null">
+        sale_delivery_order_id = #{saleDeliveryOrderId,jdbcType=BIGINT},
+      </if>
+      <if test="userAccountId != null">
+        user_account_id = #{userAccountId,jdbcType=BIGINT},
+      </if>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=BIGINT},
+      </if>
+      <if test="orderNo != null">
+        order_no = #{orderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="consignee != null">
+        consignee = #{consignee,jdbcType=VARCHAR},
+      </if>
+      <if test="deliveryAddress != null">
+        delivery_address = #{deliveryAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="consigneeCellPhoneNumber != null">
+        consignee_cell_phone_number = #{consigneeCellPhoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="freight != null">
+        freight = #{freight,jdbcType=DECIMAL},
+      </if>
+      <if test="payType != null">
+        pay_type = #{payType,jdbcType=TINYINT},
+      </if>
+      <if test="totalAmount != null">
+        total_amount = #{totalAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="discountAmount != null">
+        discount_amount = #{discountAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="couponAmount != null">
+        coupon_amount = #{couponAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="payableAmount != null">
+        payable_amount = #{payableAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="invoiceTitle != null">
+        invoice_title = #{invoiceTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="taxpayerId != null">
+        taxpayer_id = #{taxpayerId,jdbcType=VARCHAR},
+      </if>
+      <if test="orderComment != null">
+        order_comment = #{orderComment,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

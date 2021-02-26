@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhss.eshop.schedule.mapper.ScheduleOrderPickingItemMapper">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.schedule.domain.dao.ScheduleOrderPickingItem">
+    <!--@mbg.generated-->
+    <!--@Table schedule_order_picking_item-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="order_info_id" jdbcType="BIGINT" property="orderInfoId" />
+    <result column="order_item_id" jdbcType="BIGINT" property="orderItemId" />
+    <result column="goods_allocation_id" jdbcType="BIGINT" property="goodsAllocationId" />
+    <result column="goods_sku_id" jdbcType="BIGINT" property="goodsSkuId" />
+    <result column="picking_count" jdbcType="BIGINT" property="pickingCount" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, order_info_id, order_item_id, goods_allocation_id, goods_sku_id, picking_count, 
+    gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from schedule_order_picking_item
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from schedule_order_picking_item
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.schedule.domain.dao.ScheduleOrderPickingItem" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into schedule_order_picking_item
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="orderInfoId != null">
+        order_info_id,
+      </if>
+      <if test="orderItemId != null">
+        order_item_id,
+      </if>
+      <if test="goodsAllocationId != null">
+        goods_allocation_id,
+      </if>
+      <if test="goodsSkuId != null">
+        goods_sku_id,
+      </if>
+      <if test="pickingCount != null">
+        picking_count,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="orderInfoId != null">
+        #{orderInfoId,jdbcType=BIGINT},
+      </if>
+      <if test="orderItemId != null">
+        #{orderItemId,jdbcType=BIGINT},
+      </if>
+      <if test="goodsAllocationId != null">
+        #{goodsAllocationId,jdbcType=BIGINT},
+      </if>
+      <if test="goodsSkuId != null">
+        #{goodsSkuId,jdbcType=BIGINT},
+      </if>
+      <if test="pickingCount != null">
+        #{pickingCount,jdbcType=BIGINT},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.schedule.domain.dao.ScheduleOrderPickingItem">
+    <!--@mbg.generated-->
+    update schedule_order_picking_item
+    <set>
+      <if test="orderInfoId != null">
+        order_info_id = #{orderInfoId,jdbcType=BIGINT},
+      </if>
+      <if test="orderItemId != null">
+        order_item_id = #{orderItemId,jdbcType=BIGINT},
+      </if>
+      <if test="goodsAllocationId != null">
+        goods_allocation_id = #{goodsAllocationId,jdbcType=BIGINT},
+      </if>
+      <if test="goodsSkuId != null">
+        goods_sku_id = #{goodsSkuId,jdbcType=BIGINT},
+      </if>
+      <if test="pickingCount != null">
+        picking_count = #{pickingCount,jdbcType=BIGINT},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

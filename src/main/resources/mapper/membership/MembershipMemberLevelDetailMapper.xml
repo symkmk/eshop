@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhss.eshop.membership.mapper.MembershipMemberLevelDetailMapper">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.membership.domain.dao.MembershipMemberLevelDetail">
+    <!--@mbg.generated-->
+    <!--@Table membership_member_level_detail-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_account_id" jdbcType="BIGINT" property="userAccountId" />
+    <result column="old_growth_value" jdbcType="BIGINT" property="oldGrowthValue" />
+    <result column="updated_growth_value" jdbcType="BIGINT" property="updatedGrowthValue" />
+    <result column="new_growth_value" jdbcType="BIGINT" property="newGrowthValue" />
+    <result column="old_member_level" jdbcType="TINYINT" property="oldMemberLevel" />
+    <result column="new_member_level" jdbcType="TINYINT" property="newMemberLevel" />
+    <result column="update_reason" jdbcType="VARCHAR" property="updateReason" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, user_account_id, old_growth_value, updated_growth_value, new_growth_value, old_member_level, 
+    new_member_level, update_reason, gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from membership_member_level_detail
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from membership_member_level_detail
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.membership.domain.dao.MembershipMemberLevelDetail" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into membership_member_level_detail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userAccountId != null">
+        user_account_id,
+      </if>
+      <if test="oldGrowthValue != null">
+        old_growth_value,
+      </if>
+      <if test="updatedGrowthValue != null">
+        updated_growth_value,
+      </if>
+      <if test="newGrowthValue != null">
+        new_growth_value,
+      </if>
+      <if test="oldMemberLevel != null">
+        old_member_level,
+      </if>
+      <if test="newMemberLevel != null">
+        new_member_level,
+      </if>
+      <if test="updateReason != null">
+        update_reason,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userAccountId != null">
+        #{userAccountId,jdbcType=BIGINT},
+      </if>
+      <if test="oldGrowthValue != null">
+        #{oldGrowthValue,jdbcType=BIGINT},
+      </if>
+      <if test="updatedGrowthValue != null">
+        #{updatedGrowthValue,jdbcType=BIGINT},
+      </if>
+      <if test="newGrowthValue != null">
+        #{newGrowthValue,jdbcType=BIGINT},
+      </if>
+      <if test="oldMemberLevel != null">
+        #{oldMemberLevel,jdbcType=TINYINT},
+      </if>
+      <if test="newMemberLevel != null">
+        #{newMemberLevel,jdbcType=TINYINT},
+      </if>
+      <if test="updateReason != null">
+        #{updateReason,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.membership.domain.dao.MembershipMemberLevelDetail">
+    <!--@mbg.generated-->
+    update membership_member_level_detail
+    <set>
+      <if test="userAccountId != null">
+        user_account_id = #{userAccountId,jdbcType=BIGINT},
+      </if>
+      <if test="oldGrowthValue != null">
+        old_growth_value = #{oldGrowthValue,jdbcType=BIGINT},
+      </if>
+      <if test="updatedGrowthValue != null">
+        updated_growth_value = #{updatedGrowthValue,jdbcType=BIGINT},
+      </if>
+      <if test="newGrowthValue != null">
+        new_growth_value = #{newGrowthValue,jdbcType=BIGINT},
+      </if>
+      <if test="oldMemberLevel != null">
+        old_member_level = #{oldMemberLevel,jdbcType=TINYINT},
+      </if>
+      <if test="newMemberLevel != null">
+        new_member_level = #{newMemberLevel,jdbcType=TINYINT},
+      </if>
+      <if test="updateReason != null">
+        update_reason = #{updateReason,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

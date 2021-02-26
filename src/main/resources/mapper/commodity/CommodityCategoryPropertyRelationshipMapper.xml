@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhss.eshop.commodity.mapper.CommodityCategoryPropertyRelationshipMapper">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.commodity.domain.dao.CommodityCategoryPropertyRelationship">
+    <!--@mbg.generated-->
+    <!--@Table commodity_category_property_relationship-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="category_id" jdbcType="BIGINT" property="categoryId" />
+    <result column="property_id" jdbcType="BIGINT" property="propertyId" />
+    <result column="is_required" jdbcType="TINYINT" property="isRequired" />
+    <result column="property_types" jdbcType="VARCHAR" property="propertyTypes" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, category_id, property_id, is_required, property_types, gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from commodity_category_property_relationship
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from commodity_category_property_relationship
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.commodity.domain.dao.CommodityCategoryPropertyRelationship" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into commodity_category_property_relationship
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="categoryId != null">
+        category_id,
+      </if>
+      <if test="propertyId != null">
+        property_id,
+      </if>
+      <if test="isRequired != null">
+        is_required,
+      </if>
+      <if test="propertyTypes != null">
+        property_types,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="categoryId != null">
+        #{categoryId,jdbcType=BIGINT},
+      </if>
+      <if test="propertyId != null">
+        #{propertyId,jdbcType=BIGINT},
+      </if>
+      <if test="isRequired != null">
+        #{isRequired,jdbcType=TINYINT},
+      </if>
+      <if test="propertyTypes != null">
+        #{propertyTypes,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.commodity.domain.dao.CommodityCategoryPropertyRelationship">
+    <!--@mbg.generated-->
+    update commodity_category_property_relationship
+    <set>
+      <if test="categoryId != null">
+        category_id = #{categoryId,jdbcType=BIGINT},
+      </if>
+      <if test="propertyId != null">
+        property_id = #{propertyId,jdbcType=BIGINT},
+      </if>
+      <if test="isRequired != null">
+        is_required = #{isRequired,jdbcType=TINYINT},
+      </if>
+      <if test="propertyTypes != null">
+        property_types = #{propertyTypes,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

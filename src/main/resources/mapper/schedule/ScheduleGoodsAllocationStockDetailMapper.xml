@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhss.eshop.schedule.mapper.ScheduleGoodsAllocationStockDetailMapper">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.schedule.domain.dao.ScheduleGoodsAllocationStockDetail">
+    <!--@mbg.generated-->
+    <!--@Table schedule_goods_allocation_stock_detail-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="goods_sku_id" jdbcType="BIGINT" property="goodsSkuId" />
+    <result column="goods_allocation_id" jdbcType="BIGINT" property="goodsAllocationId" />
+    <result column="put_on_time" jdbcType="TIMESTAMP" property="putOnTime" />
+    <result column="put_on_quantity" jdbcType="BIGINT" property="putOnQuantity" />
+    <result column="current_stock_quantity" jdbcType="BIGINT" property="currentStockQuantity" />
+    <result column="locked_stock_quantity" jdbcType="BIGINT" property="lockedStockQuantity" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, goods_sku_id, goods_allocation_id, put_on_time, put_on_quantity, current_stock_quantity, 
+    locked_stock_quantity, gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from schedule_goods_allocation_stock_detail
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from schedule_goods_allocation_stock_detail
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insertSelective" parameterType="com.zhss.eshop.schedule.domain.dao.ScheduleGoodsAllocationStockDetail">
+    <!--@mbg.generated-->
+    insert into schedule_goods_allocation_stock_detail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="goodsSkuId != null">
+        goods_sku_id,
+      </if>
+      <if test="goodsAllocationId != null">
+        goods_allocation_id,
+      </if>
+      <if test="putOnTime != null">
+        put_on_time,
+      </if>
+      <if test="putOnQuantity != null">
+        put_on_quantity,
+      </if>
+      <if test="currentStockQuantity != null">
+        current_stock_quantity,
+      </if>
+      <if test="lockedStockQuantity != null">
+        locked_stock_quantity,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="goodsSkuId != null">
+        #{goodsSkuId,jdbcType=BIGINT},
+      </if>
+      <if test="goodsAllocationId != null">
+        #{goodsAllocationId,jdbcType=BIGINT},
+      </if>
+      <if test="putOnTime != null">
+        #{putOnTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="putOnQuantity != null">
+        #{putOnQuantity,jdbcType=BIGINT},
+      </if>
+      <if test="currentStockQuantity != null">
+        #{currentStockQuantity,jdbcType=BIGINT},
+      </if>
+      <if test="lockedStockQuantity != null">
+        #{lockedStockQuantity,jdbcType=BIGINT},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.schedule.domain.dao.ScheduleGoodsAllocationStockDetail">
+    <!--@mbg.generated-->
+    update schedule_goods_allocation_stock_detail
+    <set>
+      <if test="goodsSkuId != null">
+        goods_sku_id = #{goodsSkuId,jdbcType=BIGINT},
+      </if>
+      <if test="goodsAllocationId != null">
+        goods_allocation_id = #{goodsAllocationId,jdbcType=BIGINT},
+      </if>
+      <if test="putOnTime != null">
+        put_on_time = #{putOnTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="putOnQuantity != null">
+        put_on_quantity = #{putOnQuantity,jdbcType=BIGINT},
+      </if>
+      <if test="currentStockQuantity != null">
+        current_stock_quantity = #{currentStockQuantity,jdbcType=BIGINT},
+      </if>
+      <if test="lockedStockQuantity != null">
+        locked_stock_quantity = #{lockedStockQuantity,jdbcType=BIGINT},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

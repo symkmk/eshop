@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhss.eshop.order.mapper.OrderReturnGoodsApplyMapper">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.order.domain.dao.OrderReturnGoodsApply">
+    <!--@mbg.generated-->
+    <!--@Table order_return_goods_apply-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="order_info_id" jdbcType="BIGINT" property="orderInfoId" />
+    <result column="return_goods_reason" jdbcType="TINYINT" property="returnGoodsReason" />
+    <result column="return_goods_comment" jdbcType="VARCHAR" property="returnGoodsComment" />
+    <result column="return_goods_apply_status" jdbcType="TINYINT" property="returnGoodsApplyStatus" />
+    <result column="return_goods_logistic_code" jdbcType="VARCHAR" property="returnGoodsLogisticCode" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, order_info_id, return_goods_reason, return_goods_comment, return_goods_apply_status, 
+    return_goods_logistic_code, gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from order_return_goods_apply
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from order_return_goods_apply
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.order.domain.dao.OrderReturnGoodsApply" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into order_return_goods_apply
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="orderInfoId != null">
+        order_info_id,
+      </if>
+      <if test="returnGoodsReason != null">
+        return_goods_reason,
+      </if>
+      <if test="returnGoodsComment != null">
+        return_goods_comment,
+      </if>
+      <if test="returnGoodsApplyStatus != null">
+        return_goods_apply_status,
+      </if>
+      <if test="returnGoodsLogisticCode != null">
+        return_goods_logistic_code,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="orderInfoId != null">
+        #{orderInfoId,jdbcType=BIGINT},
+      </if>
+      <if test="returnGoodsReason != null">
+        #{returnGoodsReason,jdbcType=TINYINT},
+      </if>
+      <if test="returnGoodsComment != null">
+        #{returnGoodsComment,jdbcType=VARCHAR},
+      </if>
+      <if test="returnGoodsApplyStatus != null">
+        #{returnGoodsApplyStatus,jdbcType=TINYINT},
+      </if>
+      <if test="returnGoodsLogisticCode != null">
+        #{returnGoodsLogisticCode,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.order.domain.dao.OrderReturnGoodsApply">
+    <!--@mbg.generated-->
+    update order_return_goods_apply
+    <set>
+      <if test="orderInfoId != null">
+        order_info_id = #{orderInfoId,jdbcType=BIGINT},
+      </if>
+      <if test="returnGoodsReason != null">
+        return_goods_reason = #{returnGoodsReason,jdbcType=TINYINT},
+      </if>
+      <if test="returnGoodsComment != null">
+        return_goods_comment = #{returnGoodsComment,jdbcType=VARCHAR},
+      </if>
+      <if test="returnGoodsApplyStatus != null">
+        return_goods_apply_status = #{returnGoodsApplyStatus,jdbcType=TINYINT},
+      </if>
+      <if test="returnGoodsLogisticCode != null">
+        return_goods_logistic_code = #{returnGoodsLogisticCode,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhss.eshop.wms.mapper.WmsReturnGoodsInputOrderPutOnItemMapper">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.wms.domain.dao.WmsReturnGoodsInputOrderPutOnItem">
+    <!--@mbg.generated-->
+    <!--@Table wms_return_goods_input_order_put_on_item-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="return_goods_input_order_item_id" jdbcType="BIGINT" property="returnGoodsInputOrderItemId" />
+    <result column="goods_allocation_id" jdbcType="BIGINT" property="goodsAllocationId" />
+    <result column="goods_sku_id" jdbcType="BIGINT" property="goodsSkuId" />
+    <result column="put_on_shelves_count" jdbcType="BIGINT" property="putOnShelvesCount" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, return_goods_input_order_item_id, goods_allocation_id, goods_sku_id, put_on_shelves_count, 
+    gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from wms_return_goods_input_order_put_on_item
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from wms_return_goods_input_order_put_on_item
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.wms.domain.dao.WmsReturnGoodsInputOrderPutOnItem" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into wms_return_goods_input_order_put_on_item
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="returnGoodsInputOrderItemId != null">
+        return_goods_input_order_item_id,
+      </if>
+      <if test="goodsAllocationId != null">
+        goods_allocation_id,
+      </if>
+      <if test="goodsSkuId != null">
+        goods_sku_id,
+      </if>
+      <if test="putOnShelvesCount != null">
+        put_on_shelves_count,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="returnGoodsInputOrderItemId != null">
+        #{returnGoodsInputOrderItemId,jdbcType=BIGINT},
+      </if>
+      <if test="goodsAllocationId != null">
+        #{goodsAllocationId,jdbcType=BIGINT},
+      </if>
+      <if test="goodsSkuId != null">
+        #{goodsSkuId,jdbcType=BIGINT},
+      </if>
+      <if test="putOnShelvesCount != null">
+        #{putOnShelvesCount,jdbcType=BIGINT},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.wms.domain.dao.WmsReturnGoodsInputOrderPutOnItem">
+    <!--@mbg.generated-->
+    update wms_return_goods_input_order_put_on_item
+    <set>
+      <if test="returnGoodsInputOrderItemId != null">
+        return_goods_input_order_item_id = #{returnGoodsInputOrderItemId,jdbcType=BIGINT},
+      </if>
+      <if test="goodsAllocationId != null">
+        goods_allocation_id = #{goodsAllocationId,jdbcType=BIGINT},
+      </if>
+      <if test="goodsSkuId != null">
+        goods_sku_id = #{goodsSkuId,jdbcType=BIGINT},
+      </if>
+      <if test="putOnShelvesCount != null">
+        put_on_shelves_count = #{putOnShelvesCount,jdbcType=BIGINT},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

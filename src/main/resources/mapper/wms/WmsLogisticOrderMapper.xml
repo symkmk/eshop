@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhss.eshop.wms.mapper.WmsLogisticOrderMapper">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.wms.domain.dao.WmsLogisticOrder">
+    <!--@mbg.generated-->
+    <!--@Table wms_logistic_order-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="sale_delivery_order_id" jdbcType="BIGINT" property="saleDeliveryOrderId" />
+    <result column="logistic_code" jdbcType="VARCHAR" property="logisticCode" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, sale_delivery_order_id, logistic_code, content, gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from wms_logistic_order
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from wms_logistic_order
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.wms.domain.dao.WmsLogisticOrder" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into wms_logistic_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="saleDeliveryOrderId != null">
+        sale_delivery_order_id,
+      </if>
+      <if test="logisticCode != null">
+        logistic_code,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="saleDeliveryOrderId != null">
+        #{saleDeliveryOrderId,jdbcType=BIGINT},
+      </if>
+      <if test="logisticCode != null">
+        #{logisticCode,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.wms.domain.dao.WmsLogisticOrder">
+    <!--@mbg.generated-->
+    update wms_logistic_order
+    <set>
+      <if test="saleDeliveryOrderId != null">
+        sale_delivery_order_id = #{saleDeliveryOrderId,jdbcType=BIGINT},
+      </if>
+      <if test="logisticCode != null">
+        logistic_code = #{logisticCode,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

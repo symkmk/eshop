@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhss.eshop.commodity.mapper.CommodityGoodsSkuSalePropertyValueMapper">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.commodity.domain.dao.CommodityGoodsSkuSalePropertyValue">
+    <!--@mbg.generated-->
+    <!--@Table commodity_goods_sku_sale_property_value-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="goods_sku_id" jdbcType="BIGINT" property="goodsSkuId" />
+    <result column="relation_id" jdbcType="BIGINT" property="relationId" />
+    <result column="property_value" jdbcType="VARCHAR" property="propertyValue" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, goods_sku_id, relation_id, property_value, gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from commodity_goods_sku_sale_property_value
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from commodity_goods_sku_sale_property_value
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.commodity.domain.dao.CommodityGoodsSkuSalePropertyValue" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into commodity_goods_sku_sale_property_value
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="goodsSkuId != null">
+        goods_sku_id,
+      </if>
+      <if test="relationId != null">
+        relation_id,
+      </if>
+      <if test="propertyValue != null">
+        property_value,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="goodsSkuId != null">
+        #{goodsSkuId,jdbcType=BIGINT},
+      </if>
+      <if test="relationId != null">
+        #{relationId,jdbcType=BIGINT},
+      </if>
+      <if test="propertyValue != null">
+        #{propertyValue,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.commodity.domain.dao.CommodityGoodsSkuSalePropertyValue">
+    <!--@mbg.generated-->
+    update commodity_goods_sku_sale_property_value
+    <set>
+      <if test="goodsSkuId != null">
+        goods_sku_id = #{goodsSkuId,jdbcType=BIGINT},
+      </if>
+      <if test="relationId != null">
+        relation_id = #{relationId,jdbcType=BIGINT},
+      </if>
+      <if test="propertyValue != null">
+        property_value = #{propertyValue,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

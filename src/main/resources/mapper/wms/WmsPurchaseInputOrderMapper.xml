@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhss.eshop.wms.mapper.WmsPurchaseInputOrderMapper">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.wms.domain.dao.WmsPurchaseInputOrder">
+    <!--@mbg.generated-->
+    <!--@Table wms_purchase_input_order-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="purchase_order_id" jdbcType="BIGINT" property="purchaseOrderId" />
+    <result column="supplier_id" jdbcType="BIGINT" property="supplierId" />
+    <result column="expect_arrival_time" jdbcType="TIMESTAMP" property="expectArrivalTime" />
+    <result column="actual_arrival_time" jdbcType="TIMESTAMP" property="actualArrivalTime" />
+    <result column="purchase_contactor" jdbcType="VARCHAR" property="purchaseContactor" />
+    <result column="purchase_contactor_phone_number" jdbcType="VARCHAR" property="purchaseContactorPhoneNumber" />
+    <result column="purchase_contactor_email" jdbcType="VARCHAR" property="purchaseContactorEmail" />
+    <result column="purchase_order_remark" jdbcType="VARCHAR" property="purchaseOrderRemark" />
+    <result column="purchaser" jdbcType="VARCHAR" property="purchaser" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, purchase_order_id, supplier_id, expect_arrival_time, actual_arrival_time, purchase_contactor, 
+    purchase_contactor_phone_number, purchase_contactor_email, purchase_order_remark, 
+    purchaser, `status`, gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from wms_purchase_input_order
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from wms_purchase_input_order
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.wms.domain.dao.WmsPurchaseInputOrder" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into wms_purchase_input_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="purchaseOrderId != null">
+        purchase_order_id,
+      </if>
+      <if test="supplierId != null">
+        supplier_id,
+      </if>
+      <if test="expectArrivalTime != null">
+        expect_arrival_time,
+      </if>
+      <if test="actualArrivalTime != null">
+        actual_arrival_time,
+      </if>
+      <if test="purchaseContactor != null">
+        purchase_contactor,
+      </if>
+      <if test="purchaseContactorPhoneNumber != null">
+        purchase_contactor_phone_number,
+      </if>
+      <if test="purchaseContactorEmail != null">
+        purchase_contactor_email,
+      </if>
+      <if test="purchaseOrderRemark != null">
+        purchase_order_remark,
+      </if>
+      <if test="purchaser != null">
+        purchaser,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="purchaseOrderId != null">
+        #{purchaseOrderId,jdbcType=BIGINT},
+      </if>
+      <if test="supplierId != null">
+        #{supplierId,jdbcType=BIGINT},
+      </if>
+      <if test="expectArrivalTime != null">
+        #{expectArrivalTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="actualArrivalTime != null">
+        #{actualArrivalTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="purchaseContactor != null">
+        #{purchaseContactor,jdbcType=VARCHAR},
+      </if>
+      <if test="purchaseContactorPhoneNumber != null">
+        #{purchaseContactorPhoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="purchaseContactorEmail != null">
+        #{purchaseContactorEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="purchaseOrderRemark != null">
+        #{purchaseOrderRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="purchaser != null">
+        #{purchaser,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.wms.domain.dao.WmsPurchaseInputOrder">
+    <!--@mbg.generated-->
+    update wms_purchase_input_order
+    <set>
+      <if test="purchaseOrderId != null">
+        purchase_order_id = #{purchaseOrderId,jdbcType=BIGINT},
+      </if>
+      <if test="supplierId != null">
+        supplier_id = #{supplierId,jdbcType=BIGINT},
+      </if>
+      <if test="expectArrivalTime != null">
+        expect_arrival_time = #{expectArrivalTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="actualArrivalTime != null">
+        actual_arrival_time = #{actualArrivalTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="purchaseContactor != null">
+        purchase_contactor = #{purchaseContactor,jdbcType=VARCHAR},
+      </if>
+      <if test="purchaseContactorPhoneNumber != null">
+        purchase_contactor_phone_number = #{purchaseContactorPhoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="purchaseContactorEmail != null">
+        purchase_contactor_email = #{purchaseContactorEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="purchaseOrderRemark != null">
+        purchase_order_remark = #{purchaseOrderRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="purchaser != null">
+        purchaser = #{purchaser,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        `status` = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
