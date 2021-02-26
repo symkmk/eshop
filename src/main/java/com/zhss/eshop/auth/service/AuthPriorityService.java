@@ -3,6 +3,7 @@ package com.zhss.eshop.auth.service;
 import com.zhss.eshop.auth.domain.dto.PriorityDTO;
 import com.zhss.eshop.auth.domain.model.AuthPriority;
 
+
 import java.util.List;
 
 public interface AuthPriorityService{
@@ -10,12 +11,14 @@ public interface AuthPriorityService{
 
     int deleteByPrimaryKey(Long id);
 
-    int insertSelective(AuthPriority record);
+    int insertSelective(PriorityDTO record) throws Exception;
 
-    AuthPriority selectByPrimaryKey(Long id);
+    PriorityDTO selectByPrimaryKey(Long id) throws Exception;
 
-    int updateByPrimaryKeySelective(AuthPriority record);
+    int updateByPrimaryKeySelective(PriorityDTO record) throws Exception;
 
     List<PriorityDTO> listRootPriorities() throws Exception;
+
+    List<PriorityDTO> listChildPriorities( Long parentId) throws Exception;
 
 }
