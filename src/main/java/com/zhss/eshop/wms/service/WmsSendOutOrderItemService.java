@@ -1,6 +1,6 @@
 package com.zhss.eshop.wms.service;
 
-import com.zhss.eshop.wms.domain.dao.WmsSendOutOrderItem;
+import com.zhss.eshop.wms.domain.model.WmsSendOutOrderItem;
 public interface WmsSendOutOrderItemService{
 
 

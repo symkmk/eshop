@@ -1,6 +1,6 @@
 package com.zhss.eshop.order.mapper;
 
-import com.zhss.eshop.order.domain.dao.OrderOperateLog;
+import com.zhss.eshop.order.domain.model.OrderOperateLog;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

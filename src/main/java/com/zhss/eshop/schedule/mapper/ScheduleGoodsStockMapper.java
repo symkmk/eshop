@@ -1,6 +1,6 @@
 package com.zhss.eshop.schedule.mapper;
 
-import com.zhss.eshop.schedule.domain.dao.ScheduleGoodsStock;
+import com.zhss.eshop.schedule.domain.model.ScheduleGoodsStock;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

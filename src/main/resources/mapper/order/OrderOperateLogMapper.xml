@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhss.eshop.order.mapper.OrderOperateLogMapper">
-  <resultMap id="BaseResultMap" type="com.zhss.eshop.order.domain.dao.OrderOperateLog">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.order.domain.model.OrderOperateLog">
     <!--@mbg.generated-->
     <!--@Table order_operate_log-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -17,7 +17,7 @@
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     <!--@mbg.generated-->
-    select 
+    select
     <include refid="Base_Column_List" />
     from order_operate_log
     where id = #{id,jdbcType=BIGINT}
@@ -27,7 +27,7 @@
     delete from order_operate_log
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.order.domain.dao.OrderOperateLog" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.order.domain.model.OrderOperateLog" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into order_operate_log
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -65,7 +65,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.order.domain.dao.OrderOperateLog">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.order.domain.model.OrderOperateLog">
     <!--@mbg.generated-->
     update order_operate_log
     <set>

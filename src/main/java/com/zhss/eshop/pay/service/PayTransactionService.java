@@ -1,6 +1,6 @@
 package com.zhss.eshop.pay.service;
 
-import com.zhss.eshop.pay.domain.dao.PayTransaction;
+import com.zhss.eshop.pay.domain.model.PayTransaction;
 public interface PayTransactionService{
 
 

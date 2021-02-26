@@ -1,6 +1,6 @@
 package com.zhss.eshop.finance.service;
 
-import com.zhss.eshop.finance.domain.dao.FinanceLogisticsSettlementDetail;
+import com.zhss.eshop.finance.domain.model.FinanceLogisticsSettlementDetail;
 public interface FinanceLogisticsSettlementDetailService{
 
 

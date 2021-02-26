@@ -1,6 +1,6 @@
 package com.zhss.eshop.comment.service;
 
-import com.zhss.eshop.comment.domain.dao.CommentPicture;
+import com.zhss.eshop.comment.domain.model.CommentPicture;
 public interface CommentPictureService{
 
 

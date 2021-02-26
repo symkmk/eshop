@@ -1,6 +1,6 @@
 package com.zhss.eshop.shopping.service;
 
-import com.zhss.eshop.shopping.domain.dao.ShoppingCart;
+import com.zhss.eshop.shopping.domain.model.ShoppingCart;
 public interface ShoppingCartService{
 
 

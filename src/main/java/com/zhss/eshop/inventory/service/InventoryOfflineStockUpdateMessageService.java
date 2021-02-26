@@ -1,6 +1,6 @@
 package com.zhss.eshop.inventory.service;
 
-import com.zhss.eshop.inventory.domain.dao.InventoryOfflineStockUpdateMessage;
+import com.zhss.eshop.inventory.domain.model.InventoryOfflineStockUpdateMessage;
 public interface InventoryOfflineStockUpdateMessageService{
 
 

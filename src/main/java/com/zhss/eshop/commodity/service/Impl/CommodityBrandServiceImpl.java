@@ -2,7 +2,7 @@ package com.zhss.eshop.commodity.service.Impl;
 
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
-import com.zhss.eshop.commodity.domain.dao.CommodityBrand;
+import com.zhss.eshop.commodity.domain.model.CommodityBrand;
 import com.zhss.eshop.commodity.mapper.CommodityBrandMapper;
 import com.zhss.eshop.commodity.service.CommodityBrandService;
 @Service

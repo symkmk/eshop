@@ -2,7 +2,7 @@ package com.zhss.eshop.order.service.Impl;
 
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
-import com.zhss.eshop.order.domain.dao.OrderReturnGoodsApply;
+import com.zhss.eshop.order.domain.model.OrderReturnGoodsApply;
 import com.zhss.eshop.order.mapper.OrderReturnGoodsApplyMapper;
 import com.zhss.eshop.order.service.OrderReturnGoodsApplyService;
 @Service

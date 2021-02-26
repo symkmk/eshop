@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhss.eshop.order.mapper.OrderInfoMapper">
-  <resultMap id="BaseResultMap" type="com.zhss.eshop.order.domain.dao.OrderInfo">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.order.domain.model.OrderInfo">
     <!--@mbg.generated-->
     <!--@Table order_info-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -28,14 +28,14 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, user_account_id, username, order_no, order_status, consignee, delivery_address, 
-    consignee_cell_phone_number, freight, pay_type, total_amount, discount_amount, coupon_amount, 
-    payable_amount, invoice_title, taxpayer_id, order_comment, is_published_comment, 
+    id, user_account_id, username, order_no, order_status, consignee, delivery_address,
+    consignee_cell_phone_number, freight, pay_type, total_amount, discount_amount, coupon_amount,
+    payable_amount, invoice_title, taxpayer_id, order_comment, is_published_comment,
     confirm_receipt_time, gmt_create, gmt_modified
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     <!--@mbg.generated-->
-    select 
+    select
     <include refid="Base_Column_List" />
     from order_info
     where id = #{id,jdbcType=BIGINT}
@@ -45,7 +45,7 @@
     delete from order_info
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.order.domain.dao.OrderInfo" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.order.domain.model.OrderInfo" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into order_info
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -173,7 +173,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.order.domain.dao.OrderInfo">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.order.domain.model.OrderInfo">
     <!--@mbg.generated-->
     update order_info
     <set>

@@ -3,7 +3,7 @@ package com.zhss.eshop.wms.service.Impl;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.zhss.eshop.wms.mapper.WmsGoodsAllocationStockDetailMapper;
-import com.zhss.eshop.wms.domain.dao.WmsGoodsAllocationStockDetail;
+import com.zhss.eshop.wms.domain.model.WmsGoodsAllocationStockDetail;
 import com.zhss.eshop.wms.service.WmsGoodsAllocationStockDetailService;
 @Service
 public class WmsGoodsAllocationStockDetailServiceImpl implements WmsGoodsAllocationStockDetailService{

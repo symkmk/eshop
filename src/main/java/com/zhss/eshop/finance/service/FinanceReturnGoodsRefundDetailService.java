@@ -1,6 +1,6 @@
 package com.zhss.eshop.finance.service;
 
-import com.zhss.eshop.finance.domain.dao.FinanceReturnGoodsRefundDetail;
+import com.zhss.eshop.finance.domain.model.FinanceReturnGoodsRefundDetail;
 public interface FinanceReturnGoodsRefundDetailService{
 
 

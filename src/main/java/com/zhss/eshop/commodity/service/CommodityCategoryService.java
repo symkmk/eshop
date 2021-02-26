@@ -1,6 +1,6 @@
 package com.zhss.eshop.commodity.service;
 
-import com.zhss.eshop.commodity.domain.dao.CommodityCategory;
+import com.zhss.eshop.commodity.domain.model.CommodityCategory;
 public interface CommodityCategoryService{
 
 

@@ -1,6 +1,6 @@
 package com.zhss.eshop.auth.mapper;
 
-import com.zhss.eshop.auth.domain.dao.AuthRole;
+import com.zhss.eshop.auth.domain.model.AuthRole;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

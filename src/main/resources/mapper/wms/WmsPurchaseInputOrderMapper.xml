@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhss.eshop.wms.mapper.WmsPurchaseInputOrderMapper">
-  <resultMap id="BaseResultMap" type="com.zhss.eshop.wms.domain.dao.WmsPurchaseInputOrder">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.wms.domain.model.WmsPurchaseInputOrder">
     <!--@mbg.generated-->
     <!--@Table wms_purchase_input_order-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -20,13 +20,13 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, purchase_order_id, supplier_id, expect_arrival_time, actual_arrival_time, purchase_contactor, 
-    purchase_contactor_phone_number, purchase_contactor_email, purchase_order_remark, 
+    id, purchase_order_id, supplier_id, expect_arrival_time, actual_arrival_time, purchase_contactor,
+    purchase_contactor_phone_number, purchase_contactor_email, purchase_order_remark,
     purchaser, `status`, gmt_create, gmt_modified
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     <!--@mbg.generated-->
-    select 
+    select
     <include refid="Base_Column_List" />
     from wms_purchase_input_order
     where id = #{id,jdbcType=BIGINT}
@@ -36,7 +36,7 @@
     delete from wms_purchase_input_order
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.wms.domain.dao.WmsPurchaseInputOrder" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.wms.domain.model.WmsPurchaseInputOrder" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into wms_purchase_input_order
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -116,7 +116,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.wms.domain.dao.WmsPurchaseInputOrder">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.wms.domain.model.WmsPurchaseInputOrder">
     <!--@mbg.generated-->
     update wms_purchase_input_order
     <set>

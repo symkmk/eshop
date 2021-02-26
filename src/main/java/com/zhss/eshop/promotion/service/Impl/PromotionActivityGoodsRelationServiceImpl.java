@@ -2,7 +2,7 @@ package com.zhss.eshop.promotion.service.Impl;
 
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
-import com.zhss.eshop.promotion.domain.dao.PromotionActivityGoodsRelation;
+import com.zhss.eshop.promotion.domain.model.PromotionActivityGoodsRelation;
 import com.zhss.eshop.promotion.mapper.PromotionActivityGoodsRelationMapper;
 import com.zhss.eshop.promotion.service.PromotionActivityGoodsRelationService;
 @Service

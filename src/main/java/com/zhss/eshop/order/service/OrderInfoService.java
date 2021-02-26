@@ -1,6 +1,6 @@
 package com.zhss.eshop.order.service;
 
-import com.zhss.eshop.order.domain.dao.OrderInfo;
+import com.zhss.eshop.order.domain.model.OrderInfo;
 public interface OrderInfoService{
 
 

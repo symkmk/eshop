@@ -1,6 +1,6 @@
 package com.zhss.eshop.schedule.mapper;
 
-import com.zhss.eshop.schedule.domain.dao.ScheduleOrderPickingItem;
+import com.zhss.eshop.schedule.domain.model.ScheduleOrderPickingItem;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

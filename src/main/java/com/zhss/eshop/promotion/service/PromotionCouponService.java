@@ -1,6 +1,6 @@
 package com.zhss.eshop.promotion.service;
 
-import com.zhss.eshop.promotion.domain.dao.PromotionCoupon;
+import com.zhss.eshop.promotion.domain.model.PromotionCoupon;
 public interface PromotionCouponService{
 
 

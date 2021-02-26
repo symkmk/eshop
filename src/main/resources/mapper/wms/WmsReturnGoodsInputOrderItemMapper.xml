@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhss.eshop.wms.mapper.WmsReturnGoodsInputOrderItemMapper">
-  <resultMap id="BaseResultMap" type="com.zhss.eshop.wms.domain.dao.WmsReturnGoodsInputOrderItem">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.wms.domain.model.WmsReturnGoodsInputOrderItem">
     <!--@mbg.generated-->
     <!--@Table wms_return_goods_input_order_item-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -24,13 +24,13 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, return_goods_input_order_id, goods_sku_id, goods_sku_code, goods_name, sale_properties, 
-    goods_gross_weight, purchase_quantity, purchase_price, promotion_activity_id, goods_length, 
+    id, return_goods_input_order_id, goods_sku_id, goods_sku_code, goods_name, sale_properties,
+    goods_gross_weight, purchase_quantity, purchase_price, promotion_activity_id, goods_length,
     goods_width, goods_height, qualified_count, arrival_count, gmt_create, gmt_modified
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     <!--@mbg.generated-->
-    select 
+    select
     <include refid="Base_Column_List" />
     from wms_return_goods_input_order_item
     where id = #{id,jdbcType=BIGINT}
@@ -40,7 +40,7 @@
     delete from wms_return_goods_input_order_item
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.wms.domain.dao.WmsReturnGoodsInputOrderItem" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.wms.domain.model.WmsReturnGoodsInputOrderItem" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into wms_return_goods_input_order_item
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -144,7 +144,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.wms.domain.dao.WmsReturnGoodsInputOrderItem">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.wms.domain.model.WmsReturnGoodsInputOrderItem">
     <!--@mbg.generated-->
     update wms_return_goods_input_order_item
     <set>

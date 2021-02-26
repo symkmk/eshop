@@ -2,7 +2,7 @@ package com.zhss.eshop.comment.service.Impl;
 
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
-import com.zhss.eshop.comment.domain.dao.CommentAggregate;
+import com.zhss.eshop.comment.domain.model.CommentAggregate;
 import com.zhss.eshop.comment.mapper.CommentAggregateMapper;
 import com.zhss.eshop.comment.service.CommentAggregateService;
 @Service

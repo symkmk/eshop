@@ -1,6 +1,6 @@
 package com.zhss.eshop.commodity.service;
 
-import com.zhss.eshop.commodity.domain.dao.CommodityPropertyGroupRelationship;
+import com.zhss.eshop.commodity.domain.model.CommodityPropertyGroupRelationship;
 public interface CommodityPropertyGroupRelationshipService{
 
 

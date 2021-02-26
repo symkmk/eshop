@@ -1,6 +1,6 @@
 package com.zhss.eshop.membership.service;
 
-import com.zhss.eshop.membership.domain.dao.MembershipMemberPointDetail;
+import com.zhss.eshop.membership.domain.model.MembershipMemberPointDetail;
 public interface MembershipMemberPointDetailService{
 
 

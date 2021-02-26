@@ -2,7 +2,7 @@ package com.zhss.eshop.purchase.service.Impl;
 
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
-import com.zhss.eshop.purchase.domain.dao.PurchaseOrder;
+import com.zhss.eshop.purchase.domain.model.PurchaseOrder;
 import com.zhss.eshop.purchase.mapper.PurchaseOrderMapper;
 import com.zhss.eshop.purchase.service.PurchaseOrderService;
 @Service

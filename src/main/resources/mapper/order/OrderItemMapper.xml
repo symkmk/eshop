@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhss.eshop.order.mapper.OrderItemMapper">
-  <resultMap id="BaseResultMap" type="com.zhss.eshop.order.domain.dao.OrderItem">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.order.domain.model.OrderItem">
     <!--@mbg.generated-->
     <!--@Table order_item-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -23,13 +23,13 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, order_info_id, goods_id, goods_sku_id, goods_sku_code, goods_name, sale_properties, 
-    goods_gross_weight, purchase_quantity, purchase_price, promotion_activity_id, goods_length, 
+    id, order_info_id, goods_id, goods_sku_id, goods_sku_code, goods_name, sale_properties,
+    goods_gross_weight, purchase_quantity, purchase_price, promotion_activity_id, goods_length,
     goods_width, goods_height, gmt_create, gmt_modified
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     <!--@mbg.generated-->
-    select 
+    select
     <include refid="Base_Column_List" />
     from order_item
     where id = #{id,jdbcType=BIGINT}
@@ -39,7 +39,7 @@
     delete from order_item
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.order.domain.dao.OrderItem" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.order.domain.model.OrderItem" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into order_item
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -137,7 +137,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.order.domain.dao.OrderItem">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.order.domain.model.OrderItem">
     <!--@mbg.generated-->
     update order_item
     <set>

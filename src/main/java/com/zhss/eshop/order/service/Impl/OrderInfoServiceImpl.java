@@ -3,7 +3,7 @@ package com.zhss.eshop.order.service.Impl;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.zhss.eshop.order.mapper.OrderInfoMapper;
-import com.zhss.eshop.order.domain.dao.OrderInfo;
+import com.zhss.eshop.order.domain.model.OrderInfo;
 import com.zhss.eshop.order.service.OrderInfoService;
 @Service
 public class OrderInfoServiceImpl implements OrderInfoService{

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhss.eshop.wms.mapper.WmsGoodsStockMapper">
-  <resultMap id="BaseResultMap" type="com.zhss.eshop.wms.domain.dao.WmsGoodsStock">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.wms.domain.model.WmsGoodsStock">
     <!--@mbg.generated-->
     <!--@Table wms_goods_stock-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -14,12 +14,12 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, goods_sku_id, available_stock_quantity, locked_stock_quantity, output_stock_quantity, 
+    id, goods_sku_id, available_stock_quantity, locked_stock_quantity, output_stock_quantity,
     gmt_create, gmt_modified
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     <!--@mbg.generated-->
-    select 
+    select
     <include refid="Base_Column_List" />
     from wms_goods_stock
     where id = #{id,jdbcType=BIGINT}
@@ -29,7 +29,7 @@
     delete from wms_goods_stock
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.wms.domain.dao.WmsGoodsStock" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.wms.domain.model.WmsGoodsStock" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into wms_goods_stock
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -73,7 +73,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.wms.domain.dao.WmsGoodsStock">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.wms.domain.model.WmsGoodsStock">
     <!--@mbg.generated-->
     update wms_goods_stock
     <set>

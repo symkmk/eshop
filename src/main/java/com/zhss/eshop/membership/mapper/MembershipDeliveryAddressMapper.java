@@ -1,6 +1,6 @@
 package com.zhss.eshop.membership.mapper;
 
-import com.zhss.eshop.membership.domain.dao.MembershipDeliveryAddress;
+import com.zhss.eshop.membership.domain.model.MembershipDeliveryAddress;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

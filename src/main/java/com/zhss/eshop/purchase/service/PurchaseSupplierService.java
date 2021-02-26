@@ -1,6 +1,6 @@
 package com.zhss.eshop.purchase.service;
 
-import com.zhss.eshop.purchase.domain.dao.PurchaseSupplier;
+import com.zhss.eshop.purchase.domain.model.PurchaseSupplier;
 public interface PurchaseSupplierService{
 
 

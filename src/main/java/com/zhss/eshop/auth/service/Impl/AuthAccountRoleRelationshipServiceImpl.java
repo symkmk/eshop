@@ -2,7 +2,7 @@ package com.zhss.eshop.auth.service.Impl;
 
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
-import com.zhss.eshop.auth.domain.dao.AuthAccountRoleRelationship;
+import com.zhss.eshop.auth.domain.model.AuthAccountRoleRelationship;
 import com.zhss.eshop.auth.mapper.AuthAccountRoleRelationshipMapper;
 import com.zhss.eshop.auth.service.AuthAccountRoleRelationshipService;
 @Service

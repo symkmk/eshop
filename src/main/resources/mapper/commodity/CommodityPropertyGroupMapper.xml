@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhss.eshop.commodity.mapper.CommodityPropertyGroupMapper">
-  <resultMap id="BaseResultMap" type="com.zhss.eshop.commodity.domain.dao.CommodityPropertyGroup">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.commodity.domain.model.CommodityPropertyGroup">
     <!--@mbg.generated-->
     <!--@Table commodity_property_group-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -16,7 +16,7 @@
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     <!--@mbg.generated-->
-    select 
+    select
     <include refid="Base_Column_List" />
     from commodity_property_group
     where id = #{id,jdbcType=BIGINT}
@@ -26,7 +26,7 @@
     delete from commodity_property_group
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.commodity.domain.dao.CommodityPropertyGroup" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.commodity.domain.model.CommodityPropertyGroup" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into commodity_property_group
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -58,7 +58,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.commodity.domain.dao.CommodityPropertyGroup">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.commodity.domain.model.CommodityPropertyGroup">
     <!--@mbg.generated-->
     update commodity_property_group
     <set>

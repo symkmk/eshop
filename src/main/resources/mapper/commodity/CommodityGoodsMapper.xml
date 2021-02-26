@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhss.eshop.commodity.mapper.CommodityGoodsMapper">
-  <resultMap id="BaseResultMap" type="com.zhss.eshop.commodity.domain.dao.CommodityGoods">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.commodity.domain.model.CommodityGoods">
     <!--@mbg.generated-->
     <!--@Table commodity_goods-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -23,13 +23,13 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, category_id, brand_id, code, `name`, sub_name, gross_weight, `length`, width, 
-    height, `status`, service_guarantees, package_list, freight_template_id, gmt_create, 
+    id, category_id, brand_id, code, `name`, sub_name, gross_weight, `length`, width,
+    height, `status`, service_guarantees, package_list, freight_template_id, gmt_create,
     gmt_modified
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     <!--@mbg.generated-->
-    select 
+    select
     <include refid="Base_Column_List" />
     from commodity_goods
     where id = #{id,jdbcType=BIGINT}
@@ -39,7 +39,7 @@
     delete from commodity_goods
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.commodity.domain.dao.CommodityGoods" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.commodity.domain.model.CommodityGoods" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into commodity_goods
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -137,7 +137,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.commodity.domain.dao.CommodityGoods">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.commodity.domain.model.CommodityGoods">
     <!--@mbg.generated-->
     update commodity_goods
     <set>

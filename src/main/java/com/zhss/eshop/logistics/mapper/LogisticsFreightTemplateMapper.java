@@ -1,6 +1,6 @@
 package com.zhss.eshop.logistics.mapper;
 
-import com.zhss.eshop.logistics.domain.dao.LogisticsFreightTemplate;
+import com.zhss.eshop.logistics.domain.model.LogisticsFreightTemplate;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhss.eshop.membership.mapper.MembershipMemberLevelDetailMapper">
-  <resultMap id="BaseResultMap" type="com.zhss.eshop.membership.domain.dao.MembershipMemberLevelDetail">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.membership.domain.model.MembershipMemberLevelDetail">
     <!--@mbg.generated-->
     <!--@Table membership_member_level_detail-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -17,12 +17,12 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, user_account_id, old_growth_value, updated_growth_value, new_growth_value, old_member_level, 
+    id, user_account_id, old_growth_value, updated_growth_value, new_growth_value, old_member_level,
     new_member_level, update_reason, gmt_create, gmt_modified
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     <!--@mbg.generated-->
-    select 
+    select
     <include refid="Base_Column_List" />
     from membership_member_level_detail
     where id = #{id,jdbcType=BIGINT}
@@ -32,7 +32,7 @@
     delete from membership_member_level_detail
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.membership.domain.dao.MembershipMemberLevelDetail" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.membership.domain.model.MembershipMemberLevelDetail" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into membership_member_level_detail
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -94,7 +94,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.membership.domain.dao.MembershipMemberLevelDetail">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.membership.domain.model.MembershipMemberLevelDetail">
     <!--@mbg.generated-->
     update membership_member_level_detail
     <set>

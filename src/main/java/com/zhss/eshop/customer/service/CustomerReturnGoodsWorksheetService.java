@@ -1,6 +1,6 @@
 package com.zhss.eshop.customer.service;
 
-import com.zhss.eshop.customer.domain.dao.CustomerReturnGoodsWorksheet;
+import com.zhss.eshop.customer.domain.model.CustomerReturnGoodsWorksheet;
 public interface CustomerReturnGoodsWorksheetService{
 
 

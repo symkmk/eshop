@@ -1,6 +1,6 @@
 package com.zhss.eshop.inventory.mapper;
 
-import com.zhss.eshop.inventory.domain.dao.InventoryOfflineStockUpdateMessage;
+import com.zhss.eshop.inventory.domain.model.InventoryOfflineStockUpdateMessage;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

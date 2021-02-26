@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhss.eshop.wms.mapper.WmsLogisticOrderMapper">
-  <resultMap id="BaseResultMap" type="com.zhss.eshop.wms.domain.dao.WmsLogisticOrder">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.wms.domain.model.WmsLogisticOrder">
     <!--@mbg.generated-->
     <!--@Table wms_logistic_order-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -17,7 +17,7 @@
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     <!--@mbg.generated-->
-    select 
+    select
     <include refid="Base_Column_List" />
     from wms_logistic_order
     where id = #{id,jdbcType=BIGINT}
@@ -27,7 +27,7 @@
     delete from wms_logistic_order
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.wms.domain.dao.WmsLogisticOrder" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.wms.domain.model.WmsLogisticOrder" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into wms_logistic_order
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -65,7 +65,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.wms.domain.dao.WmsLogisticOrder">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.wms.domain.model.WmsLogisticOrder">
     <!--@mbg.generated-->
     update wms_logistic_order
     <set>

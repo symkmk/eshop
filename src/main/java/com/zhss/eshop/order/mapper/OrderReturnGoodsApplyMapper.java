@@ -1,6 +1,6 @@
 package com.zhss.eshop.order.mapper;
 
-import com.zhss.eshop.order.domain.dao.OrderReturnGoodsApply;
+import com.zhss.eshop.order.domain.model.OrderReturnGoodsApply;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

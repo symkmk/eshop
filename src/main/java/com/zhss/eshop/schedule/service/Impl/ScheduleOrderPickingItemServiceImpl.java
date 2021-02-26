@@ -3,7 +3,7 @@ package com.zhss.eshop.schedule.service.Impl;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.zhss.eshop.schedule.mapper.ScheduleOrderPickingItemMapper;
-import com.zhss.eshop.schedule.domain.dao.ScheduleOrderPickingItem;
+import com.zhss.eshop.schedule.domain.model.ScheduleOrderPickingItem;
 import com.zhss.eshop.schedule.service.ScheduleOrderPickingItemService;
 @Service
 public class ScheduleOrderPickingItemServiceImpl implements ScheduleOrderPickingItemService{

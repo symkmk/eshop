@@ -1,6 +1,6 @@
 package com.zhss.eshop.wms.mapper;
 
-import com.zhss.eshop.wms.domain.dao.WmsGoodsStock;
+import com.zhss.eshop.wms.domain.model.WmsGoodsStock;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

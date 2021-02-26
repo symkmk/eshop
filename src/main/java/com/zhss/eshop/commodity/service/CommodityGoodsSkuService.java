@@ -1,6 +1,6 @@
 package com.zhss.eshop.commodity.service;
 
-import com.zhss.eshop.commodity.domain.dao.CommodityGoodsSku;
+import com.zhss.eshop.commodity.domain.model.CommodityGoodsSku;
 public interface CommodityGoodsSkuService{
 
 

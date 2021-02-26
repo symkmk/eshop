@@ -3,7 +3,7 @@ package com.zhss.eshop.inventory.service.Impl;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.zhss.eshop.inventory.mapper.InventoryGoodsStockMapper;
-import com.zhss.eshop.inventory.domain.dao.InventoryGoodsStock;
+import com.zhss.eshop.inventory.domain.model.InventoryGoodsStock;
 import com.zhss.eshop.inventory.service.InventoryGoodsStockService;
 @Service
 public class InventoryGoodsStockServiceImpl implements InventoryGoodsStockService{

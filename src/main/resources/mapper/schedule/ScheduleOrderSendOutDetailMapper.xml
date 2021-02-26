@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhss.eshop.schedule.mapper.ScheduleOrderSendOutDetailMapper">
-  <resultMap id="BaseResultMap" type="com.zhss.eshop.schedule.domain.dao.ScheduleOrderSendOutDetail">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.schedule.domain.model.ScheduleOrderSendOutDetail">
     <!--@mbg.generated-->
     <!--@Table schedule_order_send_out_detail-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -14,12 +14,12 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, order_info_id, order_item_id, goods_allocation_stock_detail_id, send_out_count, 
+    id, order_info_id, order_item_id, goods_allocation_stock_detail_id, send_out_count,
     gmt_create, gmt_modified
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     <!--@mbg.generated-->
-    select 
+    select
     <include refid="Base_Column_List" />
     from schedule_order_send_out_detail
     where id = #{id,jdbcType=BIGINT}
@@ -29,7 +29,7 @@
     delete from schedule_order_send_out_detail
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.schedule.domain.dao.ScheduleOrderSendOutDetail" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.schedule.domain.model.ScheduleOrderSendOutDetail" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into schedule_order_send_out_detail
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -73,7 +73,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.schedule.domain.dao.ScheduleOrderSendOutDetail">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.schedule.domain.model.ScheduleOrderSendOutDetail">
     <!--@mbg.generated-->
     update schedule_order_send_out_detail
     <set>

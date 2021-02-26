@@ -3,7 +3,7 @@ package com.zhss.eshop.logistics.service.Impl;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.zhss.eshop.logistics.mapper.LogisticsFreightTemplateMapper;
-import com.zhss.eshop.logistics.domain.dao.LogisticsFreightTemplate;
+import com.zhss.eshop.logistics.domain.model.LogisticsFreightTemplate;
 import com.zhss.eshop.logistics.service.LogisticsFreightTemplateService;
 @Service
 public class LogisticsFreightTemplateServiceImpl implements LogisticsFreightTemplateService{

@@ -3,7 +3,7 @@ package com.zhss.eshop.promotion.service.Impl;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.zhss.eshop.promotion.mapper.PromotionCouponAchieveMapper;
-import com.zhss.eshop.promotion.domain.dao.PromotionCouponAchieve;
+import com.zhss.eshop.promotion.domain.model.PromotionCouponAchieve;
 import com.zhss.eshop.promotion.service.PromotionCouponAchieveService;
 @Service
 public class PromotionCouponAchieveServiceImpl implements PromotionCouponAchieveService{

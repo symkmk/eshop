@@ -1,6 +1,6 @@
 package com.zhss.eshop.order.service;
 
-import com.zhss.eshop.order.domain.dao.OrderOperateLog;
+import com.zhss.eshop.order.domain.model.OrderOperateLog;
 public interface OrderOperateLogService{
 
 

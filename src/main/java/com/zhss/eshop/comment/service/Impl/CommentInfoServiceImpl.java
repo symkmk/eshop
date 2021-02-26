@@ -2,7 +2,7 @@ package com.zhss.eshop.comment.service.Impl;
 
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
-import com.zhss.eshop.comment.domain.dao.CommentInfo;
+import com.zhss.eshop.comment.domain.model.CommentInfo;
 import com.zhss.eshop.comment.mapper.CommentInfoMapper;
 import com.zhss.eshop.comment.service.CommentInfoService;
 @Service

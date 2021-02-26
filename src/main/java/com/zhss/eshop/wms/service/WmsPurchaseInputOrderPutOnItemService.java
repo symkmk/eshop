@@ -1,6 +1,6 @@
 package com.zhss.eshop.wms.service;
 
-import com.zhss.eshop.wms.domain.dao.WmsPurchaseInputOrderPutOnItem;
+import com.zhss.eshop.wms.domain.model.WmsPurchaseInputOrderPutOnItem;
 public interface WmsPurchaseInputOrderPutOnItemService{
 
 

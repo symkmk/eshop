@@ -1,6 +1,6 @@
 package com.zhss.eshop.wms.mapper;
 
-import com.zhss.eshop.wms.domain.dao.WmsPurchaseInputOrderItem;
+import com.zhss.eshop.wms.domain.model.WmsPurchaseInputOrderItem;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

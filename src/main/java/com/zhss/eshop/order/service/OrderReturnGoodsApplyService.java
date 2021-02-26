@@ -1,6 +1,6 @@
 package com.zhss.eshop.order.service;
 
-import com.zhss.eshop.order.domain.dao.OrderReturnGoodsApply;
+import com.zhss.eshop.order.domain.model.OrderReturnGoodsApply;
 public interface OrderReturnGoodsApplyService{
 
 

@@ -1,6 +1,6 @@
 package com.zhss.eshop.commodity.mapper;
 
-import com.zhss.eshop.commodity.domain.dao.CommodityGoodsSku;
+import com.zhss.eshop.commodity.domain.model.CommodityGoodsSku;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

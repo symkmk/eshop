@@ -2,7 +2,7 @@ package com.zhss.eshop.membership.service.Impl;
 
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
-import com.zhss.eshop.membership.domain.dao.MembershipMemberPoint;
+import com.zhss.eshop.membership.domain.model.MembershipMemberPoint;
 import com.zhss.eshop.membership.mapper.MembershipMemberPointMapper;
 import com.zhss.eshop.membership.service.MembershipMemberPointService;
 @Service

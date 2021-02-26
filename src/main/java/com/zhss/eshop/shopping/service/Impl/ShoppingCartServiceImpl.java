@@ -3,7 +3,7 @@ package com.zhss.eshop.shopping.service.Impl;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.zhss.eshop.shopping.mapper.ShoppingCartMapper;
-import com.zhss.eshop.shopping.domain.dao.ShoppingCart;
+import com.zhss.eshop.shopping.domain.model.ShoppingCart;
 import com.zhss.eshop.shopping.service.ShoppingCartService;
 @Service
 public class ShoppingCartServiceImpl implements ShoppingCartService{

@@ -1,6 +1,6 @@
 package com.zhss.eshop.pay.mapper;
 
-import com.zhss.eshop.pay.domain.dao.PayTransaction;
+import com.zhss.eshop.pay.domain.model.PayTransaction;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

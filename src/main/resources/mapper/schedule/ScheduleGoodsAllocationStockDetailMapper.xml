@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhss.eshop.schedule.mapper.ScheduleGoodsAllocationStockDetailMapper">
-  <resultMap id="BaseResultMap" type="com.zhss.eshop.schedule.domain.dao.ScheduleGoodsAllocationStockDetail">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.schedule.domain.model.ScheduleGoodsAllocationStockDetail">
     <!--@mbg.generated-->
     <!--@Table schedule_goods_allocation_stock_detail-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -16,12 +16,12 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, goods_sku_id, goods_allocation_id, put_on_time, put_on_quantity, current_stock_quantity, 
+    id, goods_sku_id, goods_allocation_id, put_on_time, put_on_quantity, current_stock_quantity,
     locked_stock_quantity, gmt_create, gmt_modified
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     <!--@mbg.generated-->
-    select 
+    select
     <include refid="Base_Column_List" />
     from schedule_goods_allocation_stock_detail
     where id = #{id,jdbcType=BIGINT}
@@ -31,7 +31,7 @@
     delete from schedule_goods_allocation_stock_detail
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insertSelective" parameterType="com.zhss.eshop.schedule.domain.dao.ScheduleGoodsAllocationStockDetail">
+  <insert id="insertSelective" parameterType="com.zhss.eshop.schedule.domain.model.ScheduleGoodsAllocationStockDetail">
     <!--@mbg.generated-->
     insert into schedule_goods_allocation_stock_detail
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -93,7 +93,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.schedule.domain.dao.ScheduleGoodsAllocationStockDetail">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.schedule.domain.model.ScheduleGoodsAllocationStockDetail">
     <!--@mbg.generated-->
     update schedule_goods_allocation_stock_detail
     <set>

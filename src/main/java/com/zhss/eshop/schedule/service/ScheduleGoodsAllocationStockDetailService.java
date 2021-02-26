@@ -1,6 +1,6 @@
 package com.zhss.eshop.schedule.service;
 
-import com.zhss.eshop.schedule.domain.dao.ScheduleGoodsAllocationStockDetail;
+import com.zhss.eshop.schedule.domain.model.ScheduleGoodsAllocationStockDetail;
 public interface ScheduleGoodsAllocationStockDetailService{
 
 

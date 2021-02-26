@@ -1,6 +1,6 @@
 package com.zhss.eshop.comment.service;
 
-import com.zhss.eshop.comment.domain.dao.CommentAggregate;
+import com.zhss.eshop.comment.domain.model.CommentAggregate;
 public interface CommentAggregateService{
 
 

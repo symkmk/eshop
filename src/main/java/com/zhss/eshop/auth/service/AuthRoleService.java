@@ -1,6 +1,6 @@
 package com.zhss.eshop.auth.service;
 
-import com.zhss.eshop.auth.domain.dao.AuthRole;
+import com.zhss.eshop.auth.domain.model.AuthRole;
 public interface AuthRoleService{
 
 

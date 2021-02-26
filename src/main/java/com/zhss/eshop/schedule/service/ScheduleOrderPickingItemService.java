@@ -1,6 +1,6 @@
 package com.zhss.eshop.schedule.service;
 
-import com.zhss.eshop.schedule.domain.dao.ScheduleOrderPickingItem;
+import com.zhss.eshop.schedule.domain.model.ScheduleOrderPickingItem;
 public interface ScheduleOrderPickingItemService{
 
 

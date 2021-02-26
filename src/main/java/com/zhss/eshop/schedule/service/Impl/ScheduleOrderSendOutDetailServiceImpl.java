@@ -2,7 +2,7 @@ package com.zhss.eshop.schedule.service.Impl;
 
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
-import com.zhss.eshop.schedule.domain.dao.ScheduleOrderSendOutDetail;
+import com.zhss.eshop.schedule.domain.model.ScheduleOrderSendOutDetail;
 import com.zhss.eshop.schedule.mapper.ScheduleOrderSendOutDetailMapper;
 import com.zhss.eshop.schedule.service.ScheduleOrderSendOutDetailService;
 @Service

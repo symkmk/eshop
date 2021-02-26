@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhss.eshop.finance.mapper.FinanceReturnGoodsRefundDetailMapper">
-  <resultMap id="BaseResultMap" type="com.zhss.eshop.finance.domain.dao.FinanceReturnGoodsRefundDetail">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.finance.domain.model.FinanceReturnGoodsRefundDetail">
     <!--@mbg.generated-->
     <!--@Table finance_return_goods_refund_detail-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -16,12 +16,12 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, order_id, order_no, return_goods_worksheet_id, return_goods_warehouse_entry_order_id, 
+    id, order_id, order_no, return_goods_worksheet_id, return_goods_warehouse_entry_order_id,
     user_account_id, refundl_amount, gmt_create, gmt_modified
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     <!--@mbg.generated-->
-    select 
+    select
     <include refid="Base_Column_List" />
     from finance_return_goods_refund_detail
     where id = #{id,jdbcType=BIGINT}
@@ -31,7 +31,7 @@
     delete from finance_return_goods_refund_detail
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.finance.domain.dao.FinanceReturnGoodsRefundDetail" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.finance.domain.model.FinanceReturnGoodsRefundDetail" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into finance_return_goods_refund_detail
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -87,7 +87,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.finance.domain.dao.FinanceReturnGoodsRefundDetail">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.finance.domain.model.FinanceReturnGoodsRefundDetail">
     <!--@mbg.generated-->
     update finance_return_goods_refund_detail
     <set>

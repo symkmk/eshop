@@ -2,7 +2,7 @@ package com.zhss.eshop.shopping.service.Impl;
 
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
-import com.zhss.eshop.shopping.domain.dao.ShoppingCartItem;
+import com.zhss.eshop.shopping.domain.model.ShoppingCartItem;
 import com.zhss.eshop.shopping.mapper.ShoppingCartItemMapper;
 import com.zhss.eshop.shopping.service.ShoppingCartItemService;
 @Service

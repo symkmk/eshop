@@ -1,6 +1,6 @@
 package com.zhss.eshop.auth.service;
 
-import com.zhss.eshop.auth.domain.dao.AuthAccountPriorityRelationship;
+import com.zhss.eshop.auth.domain.model.AuthAccountPriorityRelationship;
 public interface AuthAccountPriorityRelationshipService{
 
 

@@ -3,7 +3,7 @@ package com.zhss.eshop.promotion.service.Impl;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.zhss.eshop.promotion.mapper.PromotionActivityMapper;
-import com.zhss.eshop.promotion.domain.dao.PromotionActivity;
+import com.zhss.eshop.promotion.domain.model.PromotionActivity;
 import com.zhss.eshop.promotion.service.PromotionActivityService;
 @Service
 public class PromotionActivityServiceImpl implements PromotionActivityService{

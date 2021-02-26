@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhss.eshop.customer.mapper.CustomerReturnGoodsWorksheetMapper">
-  <resultMap id="BaseResultMap" type="com.zhss.eshop.customer.domain.dao.CustomerReturnGoodsWorksheet">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.customer.domain.model.CustomerReturnGoodsWorksheet">
     <!--@mbg.generated-->
     <!--@Table customer_return_goods_worksheet-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -16,12 +16,12 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, order_info_id, order_no, `status`, return_goods_reason, return_goods_remark, 
+    id, order_info_id, order_no, `status`, return_goods_reason, return_goods_remark,
     return_goods_logistics_code, gmt_create, gmt_modified
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     <!--@mbg.generated-->
-    select 
+    select
     <include refid="Base_Column_List" />
     from customer_return_goods_worksheet
     where id = #{id,jdbcType=BIGINT}
@@ -31,7 +31,7 @@
     delete from customer_return_goods_worksheet
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.customer.domain.dao.CustomerReturnGoodsWorksheet" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.customer.domain.model.CustomerReturnGoodsWorksheet" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into customer_return_goods_worksheet
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -87,7 +87,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.customer.domain.dao.CustomerReturnGoodsWorksheet">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.customer.domain.model.CustomerReturnGoodsWorksheet">
     <!--@mbg.generated-->
     update customer_return_goods_worksheet
     <set>

@@ -1,6 +1,6 @@
 package com.zhss.eshop.purchase.mapper;
 
-import com.zhss.eshop.purchase.domain.dao.PurchaseOrderItem;
+import com.zhss.eshop.purchase.domain.model.PurchaseOrderItem;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

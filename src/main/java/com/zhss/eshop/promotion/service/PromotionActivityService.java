@@ -1,6 +1,6 @@
 package com.zhss.eshop.promotion.service;
 
-import com.zhss.eshop.promotion.domain.dao.PromotionActivity;
+import com.zhss.eshop.promotion.domain.model.PromotionActivity;
 public interface PromotionActivityService{
 
 

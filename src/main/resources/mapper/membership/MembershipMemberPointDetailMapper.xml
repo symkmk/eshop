@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhss.eshop.membership.mapper.MembershipMemberPointDetailMapper">
-  <resultMap id="BaseResultMap" type="com.zhss.eshop.membership.domain.dao.MembershipMemberPointDetail">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.membership.domain.model.MembershipMemberPointDetail">
     <!--@mbg.generated-->
     <!--@Table membership_member_point_detail-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -15,12 +15,12 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, user_account_id, old_member_point, updated_member_point, new_member_point, gmt_create, 
+    id, user_account_id, old_member_point, updated_member_point, new_member_point, gmt_create,
     gmt_modified, update_reason
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     <!--@mbg.generated-->
-    select 
+    select
     <include refid="Base_Column_List" />
     from membership_member_point_detail
     where id = #{id,jdbcType=BIGINT}
@@ -30,7 +30,7 @@
     delete from membership_member_point_detail
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.membership.domain.dao.MembershipMemberPointDetail" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.membership.domain.model.MembershipMemberPointDetail" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into membership_member_point_detail
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -80,7 +80,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.membership.domain.dao.MembershipMemberPointDetail">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.membership.domain.model.MembershipMemberPointDetail">
     <!--@mbg.generated-->
     update membership_member_point_detail
     <set>

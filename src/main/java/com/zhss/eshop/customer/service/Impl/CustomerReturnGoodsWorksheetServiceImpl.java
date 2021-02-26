@@ -3,7 +3,7 @@ package com.zhss.eshop.customer.service.Impl;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.zhss.eshop.customer.mapper.CustomerReturnGoodsWorksheetMapper;
-import com.zhss.eshop.customer.domain.dao.CustomerReturnGoodsWorksheet;
+import com.zhss.eshop.customer.domain.model.CustomerReturnGoodsWorksheet;
 import com.zhss.eshop.customer.service.CustomerReturnGoodsWorksheetService;
 @Service
 public class CustomerReturnGoodsWorksheetServiceImpl implements CustomerReturnGoodsWorksheetService{

@@ -2,7 +2,7 @@ package com.zhss.eshop.finance.service.Impl;
 
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
-import com.zhss.eshop.finance.domain.dao.FinanceReturnGoodsRefundDetail;
+import com.zhss.eshop.finance.domain.model.FinanceReturnGoodsRefundDetail;
 import com.zhss.eshop.finance.mapper.FinanceReturnGoodsRefundDetailMapper;
 import com.zhss.eshop.finance.service.FinanceReturnGoodsRefundDetailService;
 @Service

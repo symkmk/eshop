@@ -3,7 +3,7 @@ package com.zhss.eshop.commodity.service.Impl;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.zhss.eshop.commodity.mapper.CommodityGoodsMapper;
-import com.zhss.eshop.commodity.domain.dao.CommodityGoods;
+import com.zhss.eshop.commodity.domain.model.CommodityGoods;
 import com.zhss.eshop.commodity.service.CommodityGoodsService;
 @Service
 public class CommodityGoodsServiceImpl implements CommodityGoodsService{

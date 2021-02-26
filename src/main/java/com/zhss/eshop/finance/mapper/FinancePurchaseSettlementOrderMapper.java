@@ -1,6 +1,6 @@
 package com.zhss.eshop.finance.mapper;
 
-import com.zhss.eshop.finance.domain.dao.FinancePurchaseSettlementOrder;
+import com.zhss.eshop.finance.domain.model.FinancePurchaseSettlementOrder;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

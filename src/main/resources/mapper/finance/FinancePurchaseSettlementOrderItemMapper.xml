@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhss.eshop.finance.mapper.FinancePurchaseSettlementOrderItemMapper">
-  <resultMap id="BaseResultMap" type="com.zhss.eshop.finance.domain.dao.FinancePurchaseSettlementOrderItem">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.finance.domain.model.FinancePurchaseSettlementOrderItem">
     <!--@mbg.generated-->
     <!--@Table finance_purchase_settlement_order_item-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -16,12 +16,12 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, purchase_settlement_order_id, goods_sku_id, purchase_count, purchase_price, qualified_count, 
+    id, purchase_settlement_order_id, goods_sku_id, purchase_count, purchase_price, qualified_count,
     arrival_count, gmt_create, gmt_modified
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     <!--@mbg.generated-->
-    select 
+    select
     <include refid="Base_Column_List" />
     from finance_purchase_settlement_order_item
     where id = #{id,jdbcType=BIGINT}
@@ -31,7 +31,7 @@
     delete from finance_purchase_settlement_order_item
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.finance.domain.dao.FinancePurchaseSettlementOrderItem" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.finance.domain.model.FinancePurchaseSettlementOrderItem" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into finance_purchase_settlement_order_item
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -87,7 +87,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.finance.domain.dao.FinancePurchaseSettlementOrderItem">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.finance.domain.model.FinancePurchaseSettlementOrderItem">
     <!--@mbg.generated-->
     update finance_purchase_settlement_order_item
     <set>

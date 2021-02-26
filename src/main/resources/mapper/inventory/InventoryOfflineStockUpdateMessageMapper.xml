@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhss.eshop.inventory.mapper.InventoryOfflineStockUpdateMessageMapper">
-  <resultMap id="BaseResultMap" type="com.zhss.eshop.inventory.domain.dao.InventoryOfflineStockUpdateMessage">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.inventory.domain.model.InventoryOfflineStockUpdateMessage">
     <!--@mbg.generated-->
     <!--@Table inventory_offline_stock_update_message-->
     <id column="id" jdbcType="VARBINARY" property="id" />
@@ -18,7 +18,7 @@
   </sql>
   <select id="selectByPrimaryKey" parameterType="byte[]" resultMap="BaseResultMap">
     <!--@mbg.generated-->
-    select 
+    select
     <include refid="Base_Column_List" />
     from inventory_offline_stock_update_message
     where id = #{id,jdbcType=VARBINARY}
@@ -28,7 +28,7 @@
     delete from inventory_offline_stock_update_message
     where id = #{id,jdbcType=VARBINARY}
   </delete>
-  <insert id="insertSelective" parameterType="com.zhss.eshop.inventory.domain.dao.InventoryOfflineStockUpdateMessage">
+  <insert id="insertSelective" parameterType="com.zhss.eshop.inventory.domain.model.InventoryOfflineStockUpdateMessage">
     <!--@mbg.generated-->
     insert into inventory_offline_stock_update_message
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -78,7 +78,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.inventory.domain.dao.InventoryOfflineStockUpdateMessage">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.inventory.domain.model.InventoryOfflineStockUpdateMessage">
     <!--@mbg.generated-->
     update inventory_offline_stock_update_message
     <set>

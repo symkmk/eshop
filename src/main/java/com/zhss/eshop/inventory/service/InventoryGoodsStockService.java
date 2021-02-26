@@ -1,6 +1,6 @@
 package com.zhss.eshop.inventory.service;
 
-import com.zhss.eshop.inventory.domain.dao.InventoryGoodsStock;
+import com.zhss.eshop.inventory.domain.model.InventoryGoodsStock;
 public interface InventoryGoodsStockService{
 
 

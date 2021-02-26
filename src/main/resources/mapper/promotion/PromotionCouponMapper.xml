@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhss.eshop.promotion.mapper.PromotionCouponMapper">
-  <resultMap id="BaseResultMap" type="com.zhss.eshop.promotion.domain.dao.PromotionCoupon">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.promotion.domain.model.PromotionCoupon">
     <!--@mbg.generated-->
     <!--@Table promotion_coupon-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -19,12 +19,12 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, `name`, `type`, `rule`, valid_start_time, valid_end_time, give_out_count, received_count, 
+    id, `name`, `type`, `rule`, valid_start_time, valid_end_time, give_out_count, received_count,
     give_out_type, `status`, gmt_create, gmt_modified
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     <!--@mbg.generated-->
-    select 
+    select
     <include refid="Base_Column_List" />
     from promotion_coupon
     where id = #{id,jdbcType=BIGINT}
@@ -34,7 +34,7 @@
     delete from promotion_coupon
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.promotion.domain.dao.PromotionCoupon" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.promotion.domain.model.PromotionCoupon" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into promotion_coupon
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -108,7 +108,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.promotion.domain.dao.PromotionCoupon">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.promotion.domain.model.PromotionCoupon">
     <!--@mbg.generated-->
     update promotion_coupon
     <set>

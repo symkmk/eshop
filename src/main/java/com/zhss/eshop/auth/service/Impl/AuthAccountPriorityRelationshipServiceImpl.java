@@ -3,7 +3,7 @@ package com.zhss.eshop.auth.service.Impl;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.zhss.eshop.auth.mapper.AuthAccountPriorityRelationshipMapper;
-import com.zhss.eshop.auth.domain.dao.AuthAccountPriorityRelationship;
+import com.zhss.eshop.auth.domain.model.AuthAccountPriorityRelationship;
 import com.zhss.eshop.auth.service.AuthAccountPriorityRelationshipService;
 @Service
 public class AuthAccountPriorityRelationshipServiceImpl implements AuthAccountPriorityRelationshipService{

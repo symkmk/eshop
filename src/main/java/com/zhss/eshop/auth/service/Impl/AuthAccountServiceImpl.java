@@ -3,7 +3,7 @@ package com.zhss.eshop.auth.service.Impl;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.zhss.eshop.auth.mapper.AuthAccountMapper;
-import com.zhss.eshop.auth.domain.dao.AuthAccount;
+import com.zhss.eshop.auth.domain.model.AuthAccount;
 import com.zhss.eshop.auth.service.AuthAccountService;
 @Service
 public class AuthAccountServiceImpl implements AuthAccountService{

@@ -2,7 +2,7 @@ package com.zhss.eshop.wms.service.Impl;
 
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
-import com.zhss.eshop.wms.domain.dao.WmsGoodsAllocation;
+import com.zhss.eshop.wms.domain.model.WmsGoodsAllocation;
 import com.zhss.eshop.wms.mapper.WmsGoodsAllocationMapper;
 import com.zhss.eshop.wms.service.WmsGoodsAllocationService;
 @Service

@@ -1,6 +1,6 @@
 package com.zhss.eshop.shopping.mapper;
 
-import com.zhss.eshop.shopping.domain.dao.ShoppingCart;
+import com.zhss.eshop.shopping.domain.model.ShoppingCart;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

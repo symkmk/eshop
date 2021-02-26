@@ -3,7 +3,7 @@ package com.zhss.eshop.wms.service.Impl;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.zhss.eshop.wms.mapper.WmsReturnGoodsInputOrderItemMapper;
-import com.zhss.eshop.wms.domain.dao.WmsReturnGoodsInputOrderItem;
+import com.zhss.eshop.wms.domain.model.WmsReturnGoodsInputOrderItem;
 import com.zhss.eshop.wms.service.WmsReturnGoodsInputOrderItemService;
 @Service
 public class WmsReturnGoodsInputOrderItemServiceImpl implements WmsReturnGoodsInputOrderItemService{

@@ -1,6 +1,6 @@
 package com.zhss.eshop.wms.service;
 
-import com.zhss.eshop.wms.domain.dao.WmsGoodsStock;
+import com.zhss.eshop.wms.domain.model.WmsGoodsStock;
 public interface WmsGoodsStockService{
 
 

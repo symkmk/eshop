@@ -1,6 +1,6 @@
 package com.zhss.eshop.wms.service;
 
-import com.zhss.eshop.wms.domain.dao.WmsReturnGoodsInputOrderItem;
+import com.zhss.eshop.wms.domain.model.WmsReturnGoodsInputOrderItem;
 public interface WmsReturnGoodsInputOrderItemService{
 
 

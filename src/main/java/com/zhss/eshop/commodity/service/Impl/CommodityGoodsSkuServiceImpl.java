@@ -2,7 +2,7 @@ package com.zhss.eshop.commodity.service.Impl;
 
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
-import com.zhss.eshop.commodity.domain.dao.CommodityGoodsSku;
+import com.zhss.eshop.commodity.domain.model.CommodityGoodsSku;
 import com.zhss.eshop.commodity.mapper.CommodityGoodsSkuMapper;
 import com.zhss.eshop.commodity.service.CommodityGoodsSkuService;
 @Service

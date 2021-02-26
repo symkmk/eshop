@@ -1,6 +1,6 @@
 package com.zhss.eshop.promotion.service;
 
-import com.zhss.eshop.promotion.domain.dao.PromotionCouponAchieve;
+import com.zhss.eshop.promotion.domain.model.PromotionCouponAchieve;
 public interface PromotionCouponAchieveService{
 
 

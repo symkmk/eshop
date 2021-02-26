@@ -1,6 +1,6 @@
 package com.zhss.eshop.purchase.service;
 
-import com.zhss.eshop.purchase.domain.dao.PurchaseOrder;
+import com.zhss.eshop.purchase.domain.model.PurchaseOrder;
 public interface PurchaseOrderService{
 
 

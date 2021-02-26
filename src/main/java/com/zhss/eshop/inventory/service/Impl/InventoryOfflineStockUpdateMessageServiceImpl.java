@@ -2,7 +2,7 @@ package com.zhss.eshop.inventory.service.Impl;
 
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
-import com.zhss.eshop.inventory.domain.dao.InventoryOfflineStockUpdateMessage;
+import com.zhss.eshop.inventory.domain.model.InventoryOfflineStockUpdateMessage;
 import com.zhss.eshop.inventory.mapper.InventoryOfflineStockUpdateMessageMapper;
 import com.zhss.eshop.inventory.service.InventoryOfflineStockUpdateMessageService;
 @Service

@@ -1,6 +1,6 @@
 package com.zhss.eshop.comment.mapper;
 
-import com.zhss.eshop.comment.domain.dao.CommentAggregate;
+import com.zhss.eshop.comment.domain.model.CommentAggregate;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

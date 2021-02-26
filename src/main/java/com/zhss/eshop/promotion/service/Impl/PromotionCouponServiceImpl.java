@@ -2,7 +2,7 @@ package com.zhss.eshop.promotion.service.Impl;
 
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
-import com.zhss.eshop.promotion.domain.dao.PromotionCoupon;
+import com.zhss.eshop.promotion.domain.model.PromotionCoupon;
 import com.zhss.eshop.promotion.mapper.PromotionCouponMapper;
 import com.zhss.eshop.promotion.service.PromotionCouponService;
 @Service

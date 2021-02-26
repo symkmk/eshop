@@ -1,6 +1,6 @@
 package com.zhss.eshop.auth.mapper;
 
-import com.zhss.eshop.auth.domain.dao.AuthPriority;
+import com.zhss.eshop.auth.domain.model.AuthPriority;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

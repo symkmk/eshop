@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhss.eshop.comment.mapper.CommentAggregateMapper">
-  <resultMap id="BaseResultMap" type="com.zhss.eshop.comment.domain.dao.CommentAggregate">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.comment.domain.model.CommentAggregate">
     <!--@mbg.generated-->
     <!--@Table comment_aggregate-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -17,12 +17,12 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, goods_id, total_comment_count, good_comment_count, good_comment_rate, show_pictures_comment_count, 
+    id, goods_id, total_comment_count, good_comment_count, good_comment_rate, show_pictures_comment_count,
     medium_comment_count, bad_comment_count, gmt_create, gmt_modified
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     <!--@mbg.generated-->
-    select 
+    select
     <include refid="Base_Column_List" />
     from comment_aggregate
     where id = #{id,jdbcType=BIGINT}
@@ -32,7 +32,7 @@
     delete from comment_aggregate
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.comment.domain.dao.CommentAggregate" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.comment.domain.model.CommentAggregate" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into comment_aggregate
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -94,7 +94,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.comment.domain.dao.CommentAggregate">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.comment.domain.model.CommentAggregate">
     <!--@mbg.generated-->
     update comment_aggregate
     <set>

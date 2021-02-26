@@ -3,7 +3,7 @@ package com.zhss.eshop.auth.service.Impl;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.zhss.eshop.auth.mapper.AuthRoleMapper;
-import com.zhss.eshop.auth.domain.dao.AuthRole;
+import com.zhss.eshop.auth.domain.model.AuthRole;
 import com.zhss.eshop.auth.service.AuthRoleService;
 @Service
 public class AuthRoleServiceImpl implements AuthRoleService{

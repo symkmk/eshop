@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhss.eshop.auth.mapper.AuthRolePriorityRelationshipMapper">
-  <resultMap id="BaseResultMap" type="com.zhss.eshop.auth.domain.dao.AuthRolePriorityRelationship">
+  <resultMap id="BaseResultMap" type="com.zhss.eshop.auth.domain.model.AuthRolePriorityRelationship">
     <!--@mbg.generated-->
     <!--@Table auth_role_priority_relationship-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -16,7 +16,7 @@
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     <!--@mbg.generated-->
-    select 
+    select
     <include refid="Base_Column_List" />
     from auth_role_priority_relationship
     where id = #{id,jdbcType=BIGINT}
@@ -26,7 +26,7 @@
     delete from auth_role_priority_relationship
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.auth.domain.dao.AuthRolePriorityRelationship" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.auth.domain.model.AuthRolePriorityRelationship" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into auth_role_priority_relationship
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -58,7 +58,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.auth.domain.dao.AuthRolePriorityRelationship">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.auth.domain.model.AuthRolePriorityRelationship">
     <!--@mbg.generated-->
     update auth_role_priority_relationship
     <set>

@@ -1,6 +1,6 @@
 package com.zhss.eshop.comment.service;
 
-import com.zhss.eshop.comment.domain.dao.CommentInfo;
+import com.zhss.eshop.comment.domain.model.CommentInfo;
 public interface CommentInfoService{
 
 

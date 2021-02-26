@@ -3,7 +3,7 @@ package com.zhss.eshop.commodity.service.Impl;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.zhss.eshop.commodity.mapper.CommodityPropertyGroupRelationshipMapper;
-import com.zhss.eshop.commodity.domain.dao.CommodityPropertyGroupRelationship;
+import com.zhss.eshop.commodity.domain.model.CommodityPropertyGroupRelationship;
 import com.zhss.eshop.commodity.service.CommodityPropertyGroupRelationshipService;
 @Service
 public class CommodityPropertyGroupRelationshipServiceImpl implements CommodityPropertyGroupRelationshipService{

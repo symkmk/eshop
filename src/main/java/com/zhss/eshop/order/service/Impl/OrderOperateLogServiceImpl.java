@@ -2,7 +2,7 @@ package com.zhss.eshop.order.service.Impl;
 
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
-import com.zhss.eshop.order.domain.dao.OrderOperateLog;
+import com.zhss.eshop.order.domain.model.OrderOperateLog;
 import com.zhss.eshop.order.mapper.OrderOperateLogMapper;
 import com.zhss.eshop.order.service.OrderOperateLogService;
 @Service

@@ -1,6 +1,6 @@
 package com.zhss.eshop.membership.service;
 
-import com.zhss.eshop.membership.domain.dao.MembershipDeliveryAddress;
+import com.zhss.eshop.membership.domain.model.MembershipDeliveryAddress;
 public interface MembershipDeliveryAddressService{
 
 

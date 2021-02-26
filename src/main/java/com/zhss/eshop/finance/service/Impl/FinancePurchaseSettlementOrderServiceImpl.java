@@ -2,7 +2,7 @@ package com.zhss.eshop.finance.service.Impl;
 
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
-import com.zhss.eshop.finance.domain.dao.FinancePurchaseSettlementOrder;
+import com.zhss.eshop.finance.domain.model.FinancePurchaseSettlementOrder;
 import com.zhss.eshop.finance.mapper.FinancePurchaseSettlementOrderMapper;
 import com.zhss.eshop.finance.service.FinancePurchaseSettlementOrderService;
 @Service

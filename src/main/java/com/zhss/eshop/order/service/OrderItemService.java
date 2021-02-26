@@ -1,6 +1,6 @@
 package com.zhss.eshop.order.service;
 
-import com.zhss.eshop.order.domain.dao.OrderItem;
+import com.zhss.eshop.order.domain.model.OrderItem;
 public interface OrderItemService{
 
 

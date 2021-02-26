@@ -1,6 +1,6 @@
 package com.zhss.eshop.schedule.mapper;
 
-import com.zhss.eshop.schedule.domain.dao.ScheduleOrderSendOutDetail;
+import com.zhss.eshop.schedule.domain.model.ScheduleOrderSendOutDetail;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

@@ -1,6 +1,6 @@
 package com.zhss.eshop.schedule.service;
 
-import com.zhss.eshop.schedule.domain.dao.ScheduleOrderSendOutDetail;
+import com.zhss.eshop.schedule.domain.model.ScheduleOrderSendOutDetail;
 public interface ScheduleOrderSendOutDetailService{
 
 

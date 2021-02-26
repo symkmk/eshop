@@ -2,7 +2,7 @@ package com.zhss.eshop.schedule.service.Impl;
 
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
-import com.zhss.eshop.schedule.domain.dao.ScheduleGoodsAllocationStock;
+import com.zhss.eshop.schedule.domain.model.ScheduleGoodsAllocationStock;
 import com.zhss.eshop.schedule.mapper.ScheduleGoodsAllocationStockMapper;
 import com.zhss.eshop.schedule.service.ScheduleGoodsAllocationStockService;
 @Service

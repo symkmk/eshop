@@ -1,6 +1,6 @@
 package com.zhss.eshop.promotion.mapper;
 
-import com.zhss.eshop.promotion.domain.dao.PromotionCoupon;
+import com.zhss.eshop.promotion.domain.model.PromotionCoupon;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
