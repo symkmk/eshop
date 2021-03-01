@@ -1,6 +1,8 @@
 package com.zhss.eshop.auth.service.Impl;
 
 import com.zhss.eshop.auth.domain.dto.PriorityDTO;
+import com.zhss.eshop.auth.mapper.AuthAccountPriorityRelationshipMapper;
+import com.zhss.eshop.auth.mapper.AuthRolePriorityRelationshipMapper;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -20,9 +22,51 @@ public class AuthPriorityServiceImpl implements AuthPriorityService {
     @Resource
     private AuthPriorityMapper authPriorityMapper;
 
+    /**
+     * 角色和权限关系管理模块的DAO组件
+     */
+    @Resource
+    private AuthRolePriorityRelationshipMapper rolePriorityRelationshipDAO;
+    /**
+     * 账号和权限关系管理模块的DAO组件
+     */
+    @Resource
+    private AuthAccountPriorityRelationshipMapper accountPriorityRelationshipDAO;
+
     @Override
-    public int deleteByPrimaryKey(Long id) {
-        return authPriorityMapper.deleteByPrimaryKey(id);
+    public Boolean deleteByPrimaryKey(Long id) throws Exception{
+        // 根据id查询权限
+        PriorityNode priority = authPriorityMapper.selectByPrimaryKey(id)
+                .clone(PriorityNode.class);
+
+        RelatedCheckPriorityOperation relatedCheckPriorityOperation=new RelatedCheckPriorityOperation(authPriorityMapper,rolePriorityRelationshipDAO,accountPriorityRelationshipDAO);
+        relatedCheckPriorityOperation.visit(priority);
+        Boolean relateCheckResult = relatedCheckPriorityOperation.getRelateCheckResult();
+
+        if(relateCheckResult){
+            return false;
+        }
+
+        RemovePriorityOperation removePriorityOperation=new RemovePriorityOperation(authPriorityMapper);
+        removePriorityOperation.visit(priority);
+
+
+        // 检查这个权限以及其下任何一个子权限，是否被角色或者账号给关联着
+//        RelatedCheckPriorityOperation relatedCheckOperation = context.getBean(
+//                RelatedCheckPriorityOperation.class);
+//        Boolean relateCheckResult = priority.execute(relatedCheckOperation);
+//
+//        if(relateCheckResult) {
+//            return false;
+//        }
+
+        // 递归删除当前权限以及其下所有的子权限
+//        RemovePriorityOperation removeOperation = context.getBean(
+//                RemovePriorityOperation.class);
+//        priority.execute(removeOperation);
+
+        return true;
+
     }
 
     @Override

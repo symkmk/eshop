@@ -2,6 +2,7 @@ package com.zhss.eshop.auth.mapper;
 
 import com.zhss.eshop.auth.domain.model.AuthRolePriorityRelationship;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface AuthRolePriorityRelationshipMapper {
@@ -12,4 +13,6 @@ public interface AuthRolePriorityRelationshipMapper {
     AuthRolePriorityRelationship selectByPrimaryKey(Long id);
 
     int updateByPrimaryKeySelective(AuthRolePriorityRelationship record);
+
+    Long countByPriorityId(@Param("priorityId") Long priorityId);
 }

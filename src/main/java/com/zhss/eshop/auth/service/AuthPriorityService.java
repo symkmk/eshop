@@ -9,7 +9,7 @@ import java.util.List;
 public interface AuthPriorityService{
 
 
-    int deleteByPrimaryKey(Long id);
+    Boolean deleteByPrimaryKey(Long id) throws Exception;
 
     int insertSelective(PriorityDTO record) throws Exception;
 
