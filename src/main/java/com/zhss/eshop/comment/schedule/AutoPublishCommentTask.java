@@ -48,6 +48,7 @@ public class AutoPublishCommentTask {
 	@Scheduled(fixedRate = 10 * 60 * 1000)
     public void execute() {
 		try {
+			logger.info("---开始调度---");
 			 // 先从订单中心查询确认时间超过7天，而且还没有发表评论的订单
 			List<OrderInfoDTO> orderInfoDTOs = orderService.listNotPublishedCommentOrders();
 			List<Long> orderInfoIds = new ArrayList<Long>(orderInfoDTOs.size());

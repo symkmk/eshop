@@ -1,4 +1,4 @@
-package com.zhss.eshop.commodity.domain.model;
+package com.zhss.eshop.commodity.domain.vo;
 
 import com.zhss.eshop.common.util.BeanCopierUtils;
 import lombok.Data;
@@ -9,7 +9,7 @@ import java.util.Date;
     * 商品中心的属性表
     */
 @Data
-public class CommodityProperty {
+public class PropertyVO {
     /**
     * 主键
     */

@@ -1,100 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhss.eshop.commodity.mapper.CommodityPropertyMapper">
-  <resultMap id="BaseResultMap" type="com.zhss.eshop.commodity.domain.model.CommodityProperty">
-    <!--@mbg.generated-->
-    <!--@Table commodity_property-->
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="property_name" jdbcType="VARCHAR" property="propertyName" />
-    <result column="property_desc" jdbcType="VARCHAR" property="propertyDesc" />
-    <result column="input_type" jdbcType="TINYINT" property="inputType" />
-    <result column="input_values" jdbcType="VARCHAR" property="inputValues" />
-    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
-    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    <!--@mbg.generated-->
-    id, property_name, property_desc, input_type, input_values, gmt_create, gmt_modified
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    <!--@mbg.generated-->
-    select
-    <include refid="Base_Column_List" />
-    from commodity_property
-    where id = #{id,jdbcType=BIGINT}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    <!--@mbg.generated-->
-    delete from commodity_property
-    where id = #{id,jdbcType=BIGINT}
-  </delete>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.commodity.domain.model.CommodityProperty" useGeneratedKeys="true">
-    <!--@mbg.generated-->
-    insert into commodity_property
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="propertyName != null">
-        property_name,
-      </if>
-      <if test="propertyDesc != null">
-        property_desc,
-      </if>
-      <if test="inputType != null">
-        input_type,
-      </if>
-      <if test="inputValues != null">
-        input_values,
-      </if>
-      <if test="gmtCreate != null">
-        gmt_create,
-      </if>
-      <if test="gmtModified != null">
-        gmt_modified,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="propertyName != null">
-        #{propertyName,jdbcType=VARCHAR},
-      </if>
-      <if test="propertyDesc != null">
-        #{propertyDesc,jdbcType=VARCHAR},
-      </if>
-      <if test="inputType != null">
-        #{inputType,jdbcType=TINYINT},
-      </if>
-      <if test="inputValues != null">
-        #{inputValues,jdbcType=VARCHAR},
-      </if>
-      <if test="gmtCreate != null">
-        #{gmtCreate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="gmtModified != null">
-        #{gmtModified,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.commodity.domain.model.CommodityProperty">
-    <!--@mbg.generated-->
-    update commodity_property
-    <set>
-      <if test="propertyName != null">
-        property_name = #{propertyName,jdbcType=VARCHAR},
-      </if>
-      <if test="propertyDesc != null">
-        property_desc = #{propertyDesc,jdbcType=VARCHAR},
-      </if>
-      <if test="inputType != null">
-        input_type = #{inputType,jdbcType=TINYINT},
-      </if>
-      <if test="inputValues != null">
-        input_values = #{inputValues,jdbcType=VARCHAR},
-      </if>
-      <if test="gmtCreate != null">
-        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="gmtModified != null">
-        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
+    <resultMap id="BaseResultMap" type="com.zhss.eshop.commodity.domain.model.CommodityProperty">
+        <!--@mbg.generated-->
+        <!--@Table commodity_property-->
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="property_name" jdbcType="VARCHAR" property="propertyName"/>
+        <result column="property_desc" jdbcType="VARCHAR" property="propertyDesc"/>
+        <result column="input_type" jdbcType="TINYINT" property="inputType"/>
+        <result column="input_values" jdbcType="VARCHAR" property="inputValues"/>
+        <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate"/>
+        <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id, property_name, property_desc, input_type, input_values, gmt_create, gmt_modified
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List"/>
+        from commodity_property
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        <!--@mbg.generated-->
+        delete
+        from commodity_property
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id"
+            parameterType="com.zhss.eshop.commodity.domain.model.CommodityProperty" useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into commodity_property
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="propertyName != null">
+                property_name,
+            </if>
+            <if test="propertyDesc != null">
+                property_desc,
+            </if>
+            <if test="inputType != null">
+                input_type,
+            </if>
+            <if test="inputValues != null">
+                input_values,
+            </if>
+            <if test="gmtCreate != null">
+                gmt_create,
+            </if>
+            <if test="gmtModified != null">
+                gmt_modified,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="propertyName != null">
+                #{propertyName,jdbcType=VARCHAR},
+            </if>
+            <if test="propertyDesc != null">
+                #{propertyDesc,jdbcType=VARCHAR},
+            </if>
+            <if test="inputType != null">
+                #{inputType,jdbcType=TINYINT},
+            </if>
+            <if test="inputValues != null">
+                #{inputValues,jdbcType=VARCHAR},
+            </if>
+            <if test="gmtCreate != null">
+                #{gmtCreate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="gmtModified != null">
+                #{gmtModified,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.commodity.domain.model.CommodityProperty">
+        <!--@mbg.generated-->
+        update commodity_property
+        <set>
+            <if test="propertyName != null">
+                property_name = #{propertyName,jdbcType=VARCHAR},
+            </if>
+            <if test="propertyDesc != null">
+                property_desc = #{propertyDesc,jdbcType=VARCHAR},
+            </if>
+            <if test="inputType != null">
+                input_type = #{inputType,jdbcType=TINYINT},
+            </if>
+            <if test="inputValues != null">
+                input_values = #{inputValues,jdbcType=VARCHAR},
+            </if>
+            <if test="gmtCreate != null">
+                gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="gmtModified != null">
+                gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <select id="listPropertiesByPage" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from commodity_property
+    </select>
 </mapper>
