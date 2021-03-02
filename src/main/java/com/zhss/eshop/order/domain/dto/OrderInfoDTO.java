@@ -4,6 +4,7 @@ import lombok.Data;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 /**
     * 订单信息表
@@ -114,4 +115,13 @@ public class OrderInfoDTO {
     * 更新时间
     */
     private Date gmtModified;
+
+    /**
+     * 订单包含的订单条目
+     */
+    private List<OrderItemDTO> orderItems;
+    /**
+     * 订单操作日志
+     */
+    private List<OrderOperateLogDTO> logs;
 }

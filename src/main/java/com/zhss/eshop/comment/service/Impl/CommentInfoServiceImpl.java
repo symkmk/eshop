@@ -1,13 +1,12 @@
 package com.zhss.eshop.comment.service.Impl;
 
-import com.zhss.eshop.comment.constant.CommentInfoScore;
-import com.zhss.eshop.comment.constant.CommentStatus;
-import com.zhss.eshop.comment.constant.CommentType;
-import com.zhss.eshop.comment.constant.DefaultComment;
+import com.zhss.eshop.comment.constant.*;
 import com.zhss.eshop.comment.domain.dto.CommentInfoDTO;
 import com.zhss.eshop.comment.domain.model.CommentInfo;
 import com.zhss.eshop.comment.mapper.CommentInfoMapper;
 import com.zhss.eshop.comment.service.CommentInfoService;
+import com.zhss.eshop.order.domain.dto.OrderInfoDTO;
+import com.zhss.eshop.order.domain.dto.OrderItemDTO;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -77,6 +76,55 @@ public class CommentInfoServiceImpl implements CommentInfoService{
 
         // 设置评论信息的id
         commentInfoDTO.setId(commentInfoDO.getId());
+    }
+
+    /**
+     * 新增自动发表的评论信息
+     * @param orderInfoDTO 订单信息DTO对象
+     * @param orderItemDTO 订单条目DTO对象
+     * @return 处理结果
+     */
+    @Override
+    public CommentInfoDTO saveAutoPublishedCommentInfo(
+            OrderInfoDTO orderInfoDTO, OrderItemDTO orderItemDTO) throws Exception {
+        CommentInfoDTO commentInfoDTO = createAutoPublishedCommentInfoDTO(orderInfoDTO, orderItemDTO);
+        CommentInfo commentInfoDO = commentInfoDTO.clone(CommentInfo.class);
+        commentInfoMapper.insertSelective(commentInfoDO);
+        commentInfoDTO.setId(commentInfoDO.getId());
+        return commentInfoDTO;
+    }
+
+    /**
+     * 创建评论信息DTO对象
+     * @param orderInfoDTO 订单信息DTO对象
+     * @param orderItemDTO 订单条目DTO对象
+     * @return 评论信息DTO对象
+     */
+    private CommentInfoDTO createAutoPublishedCommentInfoDTO(
+            OrderInfoDTO orderInfoDTO, OrderItemDTO orderItemDTO) throws Exception {
+        CommentInfoDTO commentInfoDTO = new CommentInfoDTO();
+
+        commentInfoDTO.setUserAccountId(orderInfoDTO.getUserAccountId());
+        commentInfoDTO.setUsername(orderInfoDTO.getUsername());
+        commentInfoDTO.setOrderInfoId(orderInfoDTO.getId());
+        commentInfoDTO.setOrderItemId(orderItemDTO.getId());
+        commentInfoDTO.setGoodsId(orderItemDTO.getGoodsId());
+        commentInfoDTO.setGoodsSkuId(orderItemDTO.getGoodsSkuId());
+        commentInfoDTO.setGoodsSkuSaleProperties(orderItemDTO.getSaleProperties());
+        commentInfoDTO.setTotalScore(CommentInfoScore.FIVE);
+        commentInfoDTO.setGoodsScore(CommentInfoScore.FIVE);
+        commentInfoDTO.setCustomerServiceScore(CommentInfoScore.FIVE);
+        commentInfoDTO.setLogisticsScore(CommentInfoScore.FIVE);
+        commentInfoDTO.setCommentContent(CommentContent.DEFAULT);
+        commentInfoDTO.setIsShowPictures(ShowPictures.NO);
+        commentInfoDTO.setIsDefaultComment(DefaultComment.YES);
+        commentInfoDTO.setCommentStatus(CommentStatus.APPROVED);
+        commentInfoDTO.setCommentType(CommentType.GOOD_COMMENT);
+        SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        commentInfoDTO.setGmtCreate(dateFormatter.parse(dateFormatter.format(new Date())));
+        commentInfoDTO.setGmtModified(dateFormatter.parse(dateFormatter.format(new Date())));
+
+        return commentInfoDTO;
     }
 
 }
