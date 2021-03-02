@@ -1,13 +1,16 @@
-package com.zhss.eshop.comment.domain.model;
+package com.zhss.eshop.comment.domain.vo;
+
+import com.zhss.eshop.common.util.BeanCopierUtils;
+import lombok.Data;
 
 import java.util.Date;
-import lombok.Data;
+import java.util.List;
 
 /**
     * 评论信息表
     */
 @Data
-public class CommentInfo {
+public class CommentInfoVO {
     /**
     * 主键
     */
@@ -102,4 +105,22 @@ public class CommentInfo {
     * 更新时间
     */
     private Date gmtModified;
+
+    /**
+     * 评论图片集合
+     */
+    private List<CommentPictureVO> pictures;
+
+    //克隆
+    public <T> T clone(Class<T> clazz) throws Exception {
+        T target=null;
+        try {
+            target=clazz.newInstance();
+        }catch (Exception exception){
+//            logger.error("克隆对象出错");
+        }
+        BeanCopierUtils.copyProperties(this, target);
+        return target;
+
+    }
 }

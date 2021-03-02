@@ -1,6 +1,5 @@
-package com.zhss.eshop.order.domain.model;
+package com.zhss.eshop.order.domain.dto;
 
-import com.zhss.eshop.common.util.BeanCopierUtils;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -10,7 +9,7 @@ import java.util.Date;
     * 订单信息表
     */
 @Data
-public class OrderInfo {
+public class OrderInfoDTO {
     /**
     * 主键
     */
@@ -115,17 +114,4 @@ public class OrderInfo {
     * 更新时间
     */
     private Date gmtModified;
-
-    //克隆
-    public <T> T clone(Class<T> clazz) throws Exception {
-        T target=null;
-        try {
-            target=clazz.newInstance();
-        }catch (Exception exception){
-//            logger.error("克隆对象出错");
-        }
-        BeanCopierUtils.copyProperties(this, target);
-        return target;
-
-    }
 }

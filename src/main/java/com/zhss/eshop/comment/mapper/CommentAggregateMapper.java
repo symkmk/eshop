@@ -12,4 +12,12 @@ public interface CommentAggregateMapper {
     CommentAggregate selectByPrimaryKey(Long id);
 
     int updateByPrimaryKeySelective(CommentAggregate record);
+
+    /**
+     * 根据商品id查询评论统计信息
+     * @param goodsId 商品id
+     * @return 评论统计信息
+     * @throws Exception
+     */
+    CommentAggregate getCommentAggregateByGoodsId(Long goodsId) throws Exception;
 }

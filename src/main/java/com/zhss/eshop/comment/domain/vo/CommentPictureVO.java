@@ -1,55 +1,29 @@
-package com.zhss.eshop.comment.domain.model;
-
-import java.math.BigDecimal;
-import java.util.Date;
+package com.zhss.eshop.comment.domain.vo;
 
 import com.zhss.eshop.common.util.BeanCopierUtils;
 import lombok.Data;
 
+import java.util.Date;
+
 /**
-    * 评论聚合汇总表
+    * 评论的晒图
     */
 @Data
-public class CommentAggregate {
+public class CommentPictureVO {
     /**
     * 主键
     */
     private Long id;
 
     /**
-    * 商品ID
+    * 评论ID
     */
-    private Long goodsId;
+    private Long commentInfoId;
 
     /**
-    * 评论总数量
+    * 评论晒图的图片路径
     */
-    private Long totalCommentCount;
-
-    /**
-    * 好评数量
-    */
-    private Long goodCommentCount;
-
-    /**
-    * 好评率
-    */
-    private Double goodCommentRate;
-
-    /**
-    * 晒图评论数量
-    */
-    private Long showPicturesCommentCount;
-
-    /**
-    * 中评数量
-    */
-    private Long mediumCommentCount;
-
-    /**
-    * 差评数量
-    */
-    private Long badCommentCount;
+    private String commentPicturePath;
 
     /**
     * 创建时间

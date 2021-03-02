@@ -1,192 +1,200 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhss.eshop.order.mapper.OrderItemMapper">
-  <resultMap id="BaseResultMap" type="com.zhss.eshop.order.domain.model.OrderItem">
-    <!--@mbg.generated-->
-    <!--@Table order_item-->
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="order_info_id" jdbcType="BIGINT" property="orderInfoId" />
-    <result column="goods_id" jdbcType="BIGINT" property="goodsId" />
-    <result column="goods_sku_id" jdbcType="BIGINT" property="goodsSkuId" />
-    <result column="goods_sku_code" jdbcType="VARCHAR" property="goodsSkuCode" />
-    <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
-    <result column="sale_properties" jdbcType="VARCHAR" property="saleProperties" />
-    <result column="goods_gross_weight" jdbcType="DECIMAL" property="goodsGrossWeight" />
-    <result column="purchase_quantity" jdbcType="BIGINT" property="purchaseQuantity" />
-    <result column="purchase_price" jdbcType="DECIMAL" property="purchasePrice" />
-    <result column="promotion_activity_id" jdbcType="BIGINT" property="promotionActivityId" />
-    <result column="goods_length" jdbcType="DECIMAL" property="goodsLength" />
-    <result column="goods_width" jdbcType="DECIMAL" property="goodsWidth" />
-    <result column="goods_height" jdbcType="DECIMAL" property="goodsHeight" />
-    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
-    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    <!--@mbg.generated-->
-    id, order_info_id, goods_id, goods_sku_id, goods_sku_code, goods_name, sale_properties,
-    goods_gross_weight, purchase_quantity, purchase_price, promotion_activity_id, goods_length,
-    goods_width, goods_height, gmt_create, gmt_modified
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    <!--@mbg.generated-->
-    select
-    <include refid="Base_Column_List" />
-    from order_item
-    where id = #{id,jdbcType=BIGINT}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    <!--@mbg.generated-->
-    delete from order_item
-    where id = #{id,jdbcType=BIGINT}
-  </delete>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhss.eshop.order.domain.model.OrderItem" useGeneratedKeys="true">
-    <!--@mbg.generated-->
-    insert into order_item
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="orderInfoId != null">
-        order_info_id,
-      </if>
-      <if test="goodsId != null">
-        goods_id,
-      </if>
-      <if test="goodsSkuId != null">
-        goods_sku_id,
-      </if>
-      <if test="goodsSkuCode != null">
-        goods_sku_code,
-      </if>
-      <if test="goodsName != null">
-        goods_name,
-      </if>
-      <if test="saleProperties != null">
-        sale_properties,
-      </if>
-      <if test="goodsGrossWeight != null">
-        goods_gross_weight,
-      </if>
-      <if test="purchaseQuantity != null">
-        purchase_quantity,
-      </if>
-      <if test="purchasePrice != null">
-        purchase_price,
-      </if>
-      <if test="promotionActivityId != null">
-        promotion_activity_id,
-      </if>
-      <if test="goodsLength != null">
-        goods_length,
-      </if>
-      <if test="goodsWidth != null">
-        goods_width,
-      </if>
-      <if test="goodsHeight != null">
-        goods_height,
-      </if>
-      <if test="gmtCreate != null">
-        gmt_create,
-      </if>
-      <if test="gmtModified != null">
-        gmt_modified,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="orderInfoId != null">
-        #{orderInfoId,jdbcType=BIGINT},
-      </if>
-      <if test="goodsId != null">
-        #{goodsId,jdbcType=BIGINT},
-      </if>
-      <if test="goodsSkuId != null">
-        #{goodsSkuId,jdbcType=BIGINT},
-      </if>
-      <if test="goodsSkuCode != null">
-        #{goodsSkuCode,jdbcType=VARCHAR},
-      </if>
-      <if test="goodsName != null">
-        #{goodsName,jdbcType=VARCHAR},
-      </if>
-      <if test="saleProperties != null">
-        #{saleProperties,jdbcType=VARCHAR},
-      </if>
-      <if test="goodsGrossWeight != null">
-        #{goodsGrossWeight,jdbcType=DECIMAL},
-      </if>
-      <if test="purchaseQuantity != null">
-        #{purchaseQuantity,jdbcType=BIGINT},
-      </if>
-      <if test="purchasePrice != null">
-        #{purchasePrice,jdbcType=DECIMAL},
-      </if>
-      <if test="promotionActivityId != null">
-        #{promotionActivityId,jdbcType=BIGINT},
-      </if>
-      <if test="goodsLength != null">
-        #{goodsLength,jdbcType=DECIMAL},
-      </if>
-      <if test="goodsWidth != null">
-        #{goodsWidth,jdbcType=DECIMAL},
-      </if>
-      <if test="goodsHeight != null">
-        #{goodsHeight,jdbcType=DECIMAL},
-      </if>
-      <if test="gmtCreate != null">
-        #{gmtCreate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="gmtModified != null">
-        #{gmtModified,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.order.domain.model.OrderItem">
-    <!--@mbg.generated-->
-    update order_item
-    <set>
-      <if test="orderInfoId != null">
-        order_info_id = #{orderInfoId,jdbcType=BIGINT},
-      </if>
-      <if test="goodsId != null">
-        goods_id = #{goodsId,jdbcType=BIGINT},
-      </if>
-      <if test="goodsSkuId != null">
-        goods_sku_id = #{goodsSkuId,jdbcType=BIGINT},
-      </if>
-      <if test="goodsSkuCode != null">
-        goods_sku_code = #{goodsSkuCode,jdbcType=VARCHAR},
-      </if>
-      <if test="goodsName != null">
-        goods_name = #{goodsName,jdbcType=VARCHAR},
-      </if>
-      <if test="saleProperties != null">
-        sale_properties = #{saleProperties,jdbcType=VARCHAR},
-      </if>
-      <if test="goodsGrossWeight != null">
-        goods_gross_weight = #{goodsGrossWeight,jdbcType=DECIMAL},
-      </if>
-      <if test="purchaseQuantity != null">
-        purchase_quantity = #{purchaseQuantity,jdbcType=BIGINT},
-      </if>
-      <if test="purchasePrice != null">
-        purchase_price = #{purchasePrice,jdbcType=DECIMAL},
-      </if>
-      <if test="promotionActivityId != null">
-        promotion_activity_id = #{promotionActivityId,jdbcType=BIGINT},
-      </if>
-      <if test="goodsLength != null">
-        goods_length = #{goodsLength,jdbcType=DECIMAL},
-      </if>
-      <if test="goodsWidth != null">
-        goods_width = #{goodsWidth,jdbcType=DECIMAL},
-      </if>
-      <if test="goodsHeight != null">
-        goods_height = #{goodsHeight,jdbcType=DECIMAL},
-      </if>
-      <if test="gmtCreate != null">
-        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="gmtModified != null">
-        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
+    <resultMap id="BaseResultMap" type="com.zhss.eshop.order.domain.model.OrderItem">
+        <!--@mbg.generated-->
+        <!--@Table order_item-->
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="order_info_id" jdbcType="BIGINT" property="orderInfoId"/>
+        <result column="goods_id" jdbcType="BIGINT" property="goodsId"/>
+        <result column="goods_sku_id" jdbcType="BIGINT" property="goodsSkuId"/>
+        <result column="goods_sku_code" jdbcType="VARCHAR" property="goodsSkuCode"/>
+        <result column="goods_name" jdbcType="VARCHAR" property="goodsName"/>
+        <result column="sale_properties" jdbcType="VARCHAR" property="saleProperties"/>
+        <result column="goods_gross_weight" jdbcType="DECIMAL" property="goodsGrossWeight"/>
+        <result column="purchase_quantity" jdbcType="BIGINT" property="purchaseQuantity"/>
+        <result column="purchase_price" jdbcType="DECIMAL" property="purchasePrice"/>
+        <result column="promotion_activity_id" jdbcType="BIGINT" property="promotionActivityId"/>
+        <result column="goods_length" jdbcType="DECIMAL" property="goodsLength"/>
+        <result column="goods_width" jdbcType="DECIMAL" property="goodsWidth"/>
+        <result column="goods_height" jdbcType="DECIMAL" property="goodsHeight"/>
+        <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate"/>
+        <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id, order_info_id, goods_id, goods_sku_id, goods_sku_code, goods_name, sale_properties,
+        goods_gross_weight, purchase_quantity, purchase_price, promotion_activity_id, goods_length,
+        goods_width, goods_height, gmt_create, gmt_modified
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List"/>
+        from order_item
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        <!--@mbg.generated-->
+        delete
+        from order_item
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id"
+            parameterType="com.zhss.eshop.order.domain.model.OrderItem" useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into order_item
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="orderInfoId != null">
+                order_info_id,
+            </if>
+            <if test="goodsId != null">
+                goods_id,
+            </if>
+            <if test="goodsSkuId != null">
+                goods_sku_id,
+            </if>
+            <if test="goodsSkuCode != null">
+                goods_sku_code,
+            </if>
+            <if test="goodsName != null">
+                goods_name,
+            </if>
+            <if test="saleProperties != null">
+                sale_properties,
+            </if>
+            <if test="goodsGrossWeight != null">
+                goods_gross_weight,
+            </if>
+            <if test="purchaseQuantity != null">
+                purchase_quantity,
+            </if>
+            <if test="purchasePrice != null">
+                purchase_price,
+            </if>
+            <if test="promotionActivityId != null">
+                promotion_activity_id,
+            </if>
+            <if test="goodsLength != null">
+                goods_length,
+            </if>
+            <if test="goodsWidth != null">
+                goods_width,
+            </if>
+            <if test="goodsHeight != null">
+                goods_height,
+            </if>
+            <if test="gmtCreate != null">
+                gmt_create,
+            </if>
+            <if test="gmtModified != null">
+                gmt_modified,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="orderInfoId != null">
+                #{orderInfoId,jdbcType=BIGINT},
+            </if>
+            <if test="goodsId != null">
+                #{goodsId,jdbcType=BIGINT},
+            </if>
+            <if test="goodsSkuId != null">
+                #{goodsSkuId,jdbcType=BIGINT},
+            </if>
+            <if test="goodsSkuCode != null">
+                #{goodsSkuCode,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsName != null">
+                #{goodsName,jdbcType=VARCHAR},
+            </if>
+            <if test="saleProperties != null">
+                #{saleProperties,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsGrossWeight != null">
+                #{goodsGrossWeight,jdbcType=DECIMAL},
+            </if>
+            <if test="purchaseQuantity != null">
+                #{purchaseQuantity,jdbcType=BIGINT},
+            </if>
+            <if test="purchasePrice != null">
+                #{purchasePrice,jdbcType=DECIMAL},
+            </if>
+            <if test="promotionActivityId != null">
+                #{promotionActivityId,jdbcType=BIGINT},
+            </if>
+            <if test="goodsLength != null">
+                #{goodsLength,jdbcType=DECIMAL},
+            </if>
+            <if test="goodsWidth != null">
+                #{goodsWidth,jdbcType=DECIMAL},
+            </if>
+            <if test="goodsHeight != null">
+                #{goodsHeight,jdbcType=DECIMAL},
+            </if>
+            <if test="gmtCreate != null">
+                #{gmtCreate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="gmtModified != null">
+                #{gmtModified,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.zhss.eshop.order.domain.model.OrderItem">
+        <!--@mbg.generated-->
+        update order_item
+        <set>
+            <if test="orderInfoId != null">
+                order_info_id = #{orderInfoId,jdbcType=BIGINT},
+            </if>
+            <if test="goodsId != null">
+                goods_id = #{goodsId,jdbcType=BIGINT},
+            </if>
+            <if test="goodsSkuId != null">
+                goods_sku_id = #{goodsSkuId,jdbcType=BIGINT},
+            </if>
+            <if test="goodsSkuCode != null">
+                goods_sku_code = #{goodsSkuCode,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsName != null">
+                goods_name = #{goodsName,jdbcType=VARCHAR},
+            </if>
+            <if test="saleProperties != null">
+                sale_properties = #{saleProperties,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsGrossWeight != null">
+                goods_gross_weight = #{goodsGrossWeight,jdbcType=DECIMAL},
+            </if>
+            <if test="purchaseQuantity != null">
+                purchase_quantity = #{purchaseQuantity,jdbcType=BIGINT},
+            </if>
+            <if test="purchasePrice != null">
+                purchase_price = #{purchasePrice,jdbcType=DECIMAL},
+            </if>
+            <if test="promotionActivityId != null">
+                promotion_activity_id = #{promotionActivityId,jdbcType=BIGINT},
+            </if>
+            <if test="goodsLength != null">
+                goods_length = #{goodsLength,jdbcType=DECIMAL},
+            </if>
+            <if test="goodsWidth != null">
+                goods_width = #{goodsWidth,jdbcType=DECIMAL},
+            </if>
+            <if test="goodsHeight != null">
+                goods_height = #{goodsHeight,jdbcType=DECIMAL},
+            </if>
+            <if test="gmtCreate != null">
+                gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="gmtModified != null">
+                gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <select id="listByOrderInfoId" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from order_item
+        where order_info_id = #{orderInfoId,jdbcType=BIGINT}
+    </select>
 </mapper>

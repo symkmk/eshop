@@ -12,4 +12,7 @@ public interface OrderInfoMapper {
     OrderInfo selectByPrimaryKey(Long id);
 
     int updateByPrimaryKeySelective(OrderInfo record);
+
+
+
 }
