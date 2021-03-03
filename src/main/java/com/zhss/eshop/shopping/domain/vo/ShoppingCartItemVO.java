@@ -1,4 +1,4 @@
-package com.zhss.eshop.shopping.domain.model;
+package com.zhss.eshop.shopping.domain.vo;
 
 import com.zhss.eshop.common.util.BeanCopierUtils;
 import lombok.Data;
@@ -6,19 +6,29 @@ import lombok.Data;
 import java.util.Date;
 
 /**
-    * 购物车
+    * 购物车的商品条目
     */
 @Data
-public class ShoppingCart {
+public class ShoppingCartItemVO {
     /**
     * 主键
     */
     private Long id;
 
     /**
-    * 会员账号ID
+    * 购物车ID
     */
-    private Long userAccountId;
+    private Long shoppingCartId;
+
+    /**
+    * 商品sku ID
+    */
+    private Long goodsSkuId;
+
+    /**
+    * 购买数量
+    */
+    private Long purchaseQuantity;
 
     /**
     * 创建时间

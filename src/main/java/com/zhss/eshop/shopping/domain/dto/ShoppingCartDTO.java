@@ -1,15 +1,16 @@
-package com.zhss.eshop.shopping.domain.model;
+package com.zhss.eshop.shopping.domain.dto;
 
 import com.zhss.eshop.common.util.BeanCopierUtils;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.List;
 
 /**
     * 购物车
     */
 @Data
-public class ShoppingCart {
+public class ShoppingCartDTO {
     /**
     * 主键
     */
@@ -29,6 +30,11 @@ public class ShoppingCart {
     * 更新时间
     */
     private Date gmtModified;
+
+    /**
+     * 购物车条目集合
+     */
+    private List<ShoppingCartItemDTO> shoppingCartItemDTOs;
 
     //克隆
     public <T> T clone(Class<T> clazz) throws Exception {
